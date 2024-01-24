@@ -4,7 +4,7 @@ import { NextRequest } from "next/server";
 export const parse = (req: NextRequest) => {
   let domain = req.headers.get("host") as string;
   domain = domain.replace("www.", ""); // remove www. from domain
-  if (domain === "dub.localhost:8888" || domain.endsWith(".vercel.app")) {
+  if (domain === "artst.localhost:8888" || domain.endsWith(".vercel.app")) {
     // for local development and preview URLs
     domain = SHORT_DOMAIN;
   }
@@ -75,7 +75,7 @@ export const isIframeable = async ({
 }) => {
   const res = await fetch(url, {
     headers: {
-      "User-Agent": "dub-bot/1.0",
+      "User-Agent": "artst-bot/1.0",
     },
   });
 

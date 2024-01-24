@@ -60,7 +60,7 @@ export default function ExpirationSection({
         <Switch
           fn={() => setEnabled(!enabled)}
           checked={enabled}
-          // expiration date is only available on Dub's Pro plan
+          // expiration date is only available on Artst's Pro plan
           {...(!plan || plan === "free"
             ? {
                 disabledTooltip: (

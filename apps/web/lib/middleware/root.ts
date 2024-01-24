@@ -1,6 +1,6 @@
 import { recordClick } from "@/lib/tinybird";
 import { redis } from "@/lib/upstash";
-import { DUB_HEADERS } from "@artst/utils";
+import { ARTST_HEADERS } from "@artst/utils";
 import { NextFetchEvent, NextRequest, NextResponse } from "next/server";
 import { parse } from "./utils";
 
@@ -34,14 +34,14 @@ export default async function RootMiddleware(
         // are not. TODO: standardize this in the future.
         return NextResponse.rewrite(
           new URL(`/rewrite/${encodeURIComponent(target)}`, req.url),
-          DUB_HEADERS,
+          ARTST_HEADERS,
         );
       } else {
         // if link is not iframeable, use Next.js rewrite instead
-        return NextResponse.rewrite(target, DUB_HEADERS);
+        return NextResponse.rewrite(target, ARTST_HEADERS);
       }
     } else {
-      return NextResponse.redirect(target, DUB_HEADERS);
+      return NextResponse.redirect(target, ARTST_HEADERS);
     }
   } else {
     // rewrite to root page unless the user defines a site to redirect to

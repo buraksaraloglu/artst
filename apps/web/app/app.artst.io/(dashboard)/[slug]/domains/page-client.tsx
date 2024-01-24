@@ -15,7 +15,7 @@ import {
   Popover,
   TooltipContent,
 } from "@artst/ui";
-import { DUB_DOMAINS, HOME_DOMAIN } from "@artst/utils";
+import { ARTST_DOMAINS, HOME_DOMAIN } from "@artst/utils";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 
@@ -37,7 +37,7 @@ export default function ProjectDomainsClient() {
               <InfoTooltip
                 content={
                   <TooltipContent
-                    title="Learn more about how to add, configure, and verify custom domains on Dub."
+                    title="Learn more about how to add, configure, and verify custom domains on Artst."
                     href={`${HOME_DOMAIN}/help/article/how-to-add-custom-domain`}
                     target="_blank"
                     cta="Learn more"
@@ -116,7 +116,7 @@ const DefaultDomains = () => {
           }}
         >
           <div className="p-2 text-xs text-gray-500">Default Domains</div>
-          {DUB_DOMAINS.map(({ slug }) => (
+          {ARTST_DOMAINS.map(({ slug }) => (
             <div
               key={slug}
               className="flex items-center space-x-2 rounded-md bg-white transition-all hover:bg-gray-50 active:bg-gray-100"

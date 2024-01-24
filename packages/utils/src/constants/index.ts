@@ -83,7 +83,7 @@ export const ADMIN_HOSTNAMES = new Set([
 
 export const DEFAULT_REDIRECTS = {
   home: "https://artst.io",
-  dub: "https://artst.io",
+  artst: "https://artst.io",
   signin: "https://app.artst.io/login",
   login: "https://app.artst.io/login",
   register: "https://app.artst.io/register",
@@ -93,20 +93,20 @@ export const DEFAULT_REDIRECTS = {
   links: "https://app.artst.io/links",
   settings: "https://app.artst.io/settings",
   welcome: "https://app.artst.io/welcome",
-  discord: "https://twitter.com/dubdotco", // placeholder for now
+  discord: "https://twitter.com/artstio",
 };
 
-export const DUB_HEADERS = {
+export const ARTST_HEADERS = {
   headers: {
-    "x-powered-by": "artst.io - Link management for modern marketing teams",
+    "x-powered-by": "Artst.io - Link management for modern artists",
   },
 };
 
 export const GOOGLE_FAVICON_URL =
   "https://www.google.com/s2/favicons?sz=64&domain_url=";
 
-export const DUB_LOGO = "https://d2vwwcvoksz7ty.cloudfront.net/logo.png";
-export const DUB_THUMBNAIL =
+export const ARTST_LOGO = "https://d2vwwcvoksz7ty.cloudfront.net/logo.png";
+export const ARTST_THUMBNAIL =
   "https://d2vwwcvoksz7ty.cloudfront.net/thumbnail.png";
 
 export const HIDE_BACKGROUND_SEGMENTS = [
@@ -117,7 +117,7 @@ export const HIDE_BACKGROUND_SEGMENTS = [
   "abuse",
 ];
 
-export const DUB_DOMAINS = [
+export const ARTST_DOMAINS = [
   {
     slug: SHORT_DOMAIN,
     verified: true,
@@ -125,11 +125,11 @@ export const DUB_DOMAINS = [
     archived: false,
     target: `https://${process.env.NEXT_PUBLIC_APP_DOMAIN}`,
     type: "redirect",
-    placeholder: "https://artst.io/help/article/what-is-dub",
+    placeholder: "https://artst.io/help/article/what-is-artst",
     clicks: 0,
     allowedHostnames: [],
   },
-  ...(process.env.NEXT_PUBLIC_IS_DUB
+  ...(process.env.NEXT_PUBLIC_IS_ARTST
     ? [
         {
           slug: "chatg.pt",
@@ -220,7 +220,7 @@ export const DEFAULT_LINK_PROPS = {
   proxy: false,
 };
 
-export const DUB_PROJECT_ID = "cl7pj5kq4006835rbjlt2ofka";
+export const ARTST_PROJECT_ID = "cl7pj5kq4006835rbjlt2ofka";
 export const LEGAL_PROJECT_ID = "clrflia0j0000vs7sqfhz9c7q";
 export const LEGAL_USER_ID = "clqei1lgc0000vsnzi01pbf47";
 

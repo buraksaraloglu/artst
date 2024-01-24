@@ -53,7 +53,7 @@ export default function RewriteSection({
         <Switch
           fn={() => setEnabled(!enabled)}
           checked={enabled}
-          // link cloaking is only available on Dub's Pro plan
+          // link cloaking is only available on Artst's Pro plan
           {...(!plan || plan === "free"
             ? {
                 disabledTooltip: (

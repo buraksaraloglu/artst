@@ -5,12 +5,12 @@ import { getSession, hashToken } from "@/lib/auth";
 import prisma from "@/lib/prisma";
 import { redis } from "@/lib/upstash";
 import {
-  DUB_PROJECT_ID,
+  ARTST_PROJECT_ID,
   LEGAL_USER_ID,
   SHORT_DOMAIN,
   getDomainWithoutWWW,
 } from "@artst/utils";
-import { DUB_DOMAINS, LEGAL_PROJECT_ID } from "@artst/utils/dist/constants";
+import { ARTST_DOMAINS, LEGAL_PROJECT_ID } from "@artst/utils/dist/constants";
 import { get } from "@vercel/edge-config";
 import { randomBytes } from "crypto";
 
@@ -22,7 +22,7 @@ export async function isAdmin() {
       userId_projectId: {
         // @ts-ignore
         userId: session.user.id,
-        projectId: DUB_PROJECT_ID,
+        projectId: ARTST_PROJECT_ID,
       },
     },
   });
@@ -249,7 +249,7 @@ export async function banUser(data: FormData) {
       where: {
         userId: user.id,
         domain: {
-          in: DUB_DOMAINS.map((domain) => domain.slug),
+          in: ARTST_DOMAINS.map((domain) => domain.slug),
         },
       },
       data: {

@@ -255,7 +255,7 @@ export const POST = async (req: Request) => {
             from: "Steven from artst.io <steven@artst.co>",
             to: projectUsers,
             subject: "Feedback on your artst.io experience?",
-            text: "Hey!\n\nI noticed you recently cancelled your artst.io subscription – we're sorry to see you go!\n\nI'd love to hear your feedback on your experience with Dub – what could we have done better?\n\nThanks!\n\nSteven Tey\nFounder, artst.io",
+            text: "Hey!\n\nI noticed you recently cancelled your artst.io subscription – we're sorry to see you go!\n\nI'd love to hear your feedback on your experience with Artst – what could we have done better?\n\nThanks!\n\nSteven Tey\nFounder, artst.io",
           }),
         ]);
       }

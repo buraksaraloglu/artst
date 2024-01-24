@@ -3,8 +3,8 @@ import prisma from "@/lib/prisma";
 import slugify from "@sindresorhus/slugify";
 import { capitalize, redis } from "./utils";
 
-const DUB_PROJECT_ID = "cl7pj5kq4006835rbjlt2ofka";
-const DUB_USER_ID = "cl7p1s07k000687rbuhpwqkqa";
+const ARTST_PROJECT_ID = "cl7pj5kq4006835rbjlt2ofka";
+const ARTST_USER_ID = "cl7p1s07k000687rbuhpwqkqa";
 
 async function main() {
   const users = await prisma.link.groupBy({
@@ -13,7 +13,7 @@ async function main() {
       id: true,
     },
     where: {
-      projectId: DUB_PROJECT_ID,
+      projectId: ARTST_PROJECT_ID,
       AND: [
         {
           userId: {
@@ -22,7 +22,7 @@ async function main() {
         },
         {
           userId: {
-            not: DUB_USER_ID,
+            not: ARTST_USER_ID,
           },
         },
       ],
@@ -124,7 +124,7 @@ async function main() {
   //     finalProjects.map(async (user) => {
   //       return await prisma.link.updateMany({
   //         where: {
-  //           projectId: DUB_PROJECT_ID,
+  //           projectId: ARTST_PROJECT_ID,
   //           userId: user.userId,
   //         },
   //         data: {

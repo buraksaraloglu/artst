@@ -1,7 +1,7 @@
 "use client";
 /*
   This Stats component lives in 3 different places:
-  1. Project link page, e.g. app.artst.io/dub/artst.io/github
+  1. Project link page, e.g. app.artst.io/artst/artst.io/github
   2. Generic artst.io link page, e.g. app.artst.io/links/steven
   3. Public stats page, e.g. artst.io/stats/github, stey.me/stats/weathergpt
 
@@ -66,7 +66,7 @@ export default function Stats({
   const interval = searchParams?.get("interval") || "24h";
 
   const { basePath, domain, baseApiPath } = useMemo(() => {
-    // Project link analytics page, e.g. app.artst.io/dub/analytics?domain=artst.io&key=github
+    // Project link analytics page, e.g. app.artst.io/artst/analytics?domain=artst.io&key=github
     if (slug) {
       return {
         basePath: `/${slug}/analytics`,

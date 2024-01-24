@@ -6,7 +6,7 @@ import { linkConstructor } from "./utils";
 async function main() {
   const project = await prisma.project.findUnique({
     where: {
-      slug: "dub",
+      slug: "artst",
     },
     select: {
       id: true,

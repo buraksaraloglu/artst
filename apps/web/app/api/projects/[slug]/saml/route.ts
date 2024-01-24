@@ -9,7 +9,7 @@ export const GET = withAuth(async ({ project }) => {
 
   const connections = await apiController.getConnections({
     tenant: project.id,
-    product: "Dub",
+    product: "Artst",
   });
 
   const response = {
@@ -37,7 +37,7 @@ export const POST = withAuth(
       defaultRedirectUrl: `${process.env.NEXTAUTH_URL}/auth/saml`,
       redirectUrl: process.env.NEXTAUTH_URL as string,
       tenant: project.id,
-      product: "Dub",
+      product: "Artst",
     });
 
     return NextResponse.json(data);

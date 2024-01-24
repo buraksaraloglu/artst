@@ -9,7 +9,7 @@ export const GET = withAuth(async ({ project }) => {
   const { data, error } =
     await directorySyncController.directories.getByTenantAndProduct(
       project.id,
-      "Dub",
+      "Artst",
     );
   if (error) {
     return new Response(error.message, { status: 500 });
@@ -29,9 +29,9 @@ export const POST = withAuth(
 
     const [data, _] = await Promise.all([
       directorySyncController.directories.create({
-        name: "Dub SCIM Directory",
+        name: "Artst SCIM Directory",
         tenant: project.id,
-        product: "Dub",
+        product: "Artst",
         type: provider,
       }),
       currentDirectoryId &&

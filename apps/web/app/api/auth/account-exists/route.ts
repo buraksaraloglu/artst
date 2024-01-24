@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
     });
   }
 
-  if (!process.env.NEXT_PUBLIC_IS_DUB) {
+  if (!process.env.NEXT_PUBLIC_IS_ARTST) {
     return NextResponse.json({ exists: true });
   }
 

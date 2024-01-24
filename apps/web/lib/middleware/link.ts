@@ -1,7 +1,7 @@
 import { detectBot, getFinalUrl, parse } from "@/lib/middleware/utils";
 import { recordClick } from "@/lib/tinybird";
 import { ratelimit, redis } from "@/lib/upstash";
-import { DUB_HEADERS, LOCALHOST_GEO_DATA, LOCALHOST_IP } from "@artst/utils";
+import { ARTST_HEADERS, LOCALHOST_GEO_DATA, LOCALHOST_IP } from "@artst/utils";
 import { ipAddress } from "@vercel/edge";
 import {
   NextFetchEvent,
@@ -101,8 +101,8 @@ export default async function LinkMiddleware(
       );
     }
 
-    // only track the click when there is no `dub-no-track` header
-    if (!req.headers.get("dub-no-track")) {
+    // only track the click when there is no `artst-no-track` header
+    if (!req.headers.get("artst-no-track")) {
       ev.waitUntil(recordClick({ req, domain, key }));
     }
 
@@ -122,34 +122,37 @@ export default async function LinkMiddleware(
       if (iframeable) {
         return NextResponse.rewrite(
           new URL(`/rewrite/${target}`, req.url),
-          DUB_HEADERS,
+          ARTST_HEADERS,
         );
       } else {
         // if link is not iframeable, use Next.js rewrite instead
-        return NextResponse.rewrite(decodeURIComponent(target), DUB_HEADERS);
+        return NextResponse.rewrite(decodeURIComponent(target), ARTST_HEADERS);
       }
 
       // redirect to iOS link if it is specified and the user is on an iOS device
     } else if (ios && userAgent(req).os?.name === "iOS") {
-      return NextResponse.redirect(getFinalUrl(ios, { req }), DUB_HEADERS);
+      return NextResponse.redirect(getFinalUrl(ios, { req }), ARTST_HEADERS);
 
       // redirect to Android link if it is specified and the user is on an Android device
     } else if (android && userAgent(req).os?.name === "Android") {
-      return NextResponse.redirect(getFinalUrl(android, { req }), DUB_HEADERS);
+      return NextResponse.redirect(
+        getFinalUrl(android, { req }),
+        ARTST_HEADERS,
+      );
 
       // redirect to geo-specific link if it is specified and the user is in the specified country
     } else if (geo && country && country in geo) {
       return NextResponse.redirect(
         getFinalUrl(geo[country], { req }),
-        DUB_HEADERS,
+        ARTST_HEADERS,
       );
 
       // regular redirect
     } else {
-      return NextResponse.redirect(getFinalUrl(target, { req }), DUB_HEADERS);
+      return NextResponse.redirect(getFinalUrl(target, { req }), ARTST_HEADERS);
     }
   } else {
     // short link not found, redirect to root
-    return NextResponse.redirect(new URL("/", req.url), DUB_HEADERS);
+    return NextResponse.redirect(new URL("/", req.url), ARTST_HEADERS);
   }
 }

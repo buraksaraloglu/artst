@@ -57,7 +57,7 @@ export const authOptions: NextAuthOptions = {
           where: { email: profile.email },
         });
 
-        // user is authorized but doesn't have a Dub account, create one for them
+        // user is authorized but doesn't have a Artst account, create one for them
         if (!existingUser) {
           existingUser = await prisma.user.create({
             data: {
@@ -127,7 +127,7 @@ export const authOptions: NextAuthOptions = {
           where: { email: userInfo.email },
         });
 
-        // user is authorized but doesn't have a Dub account, create one for them
+        // user is authorized but doesn't have a Artst account, create one for them
         if (!existingUser) {
           existingUser = await prisma.user.create({
             data: {
@@ -299,7 +299,7 @@ export const authOptions: NextAuthOptions = {
         if (
           user?.createdAt &&
           new Date(user.createdAt).getTime() > Date.now() - 10000 &&
-          process.env.NEXT_PUBLIC_IS_DUB
+          process.env.NEXT_PUBLIC_IS_ARTST
         ) {
           await Promise.allSettled([
             fetch(

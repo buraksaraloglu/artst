@@ -57,7 +57,7 @@ export default function AndroidSection({
         <Switch
           fn={() => setEnabled(!enabled)}
           checked={enabled}
-          // Android targeting is only available on Dub's Pro plan
+          // Android targeting is only available on Artst's Pro plan
           {...(!plan || plan === "free"
             ? {
                 disabledTooltip: (

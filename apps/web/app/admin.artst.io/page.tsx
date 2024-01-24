@@ -5,7 +5,7 @@ import ImpersonateUser from "./components/impersonate-user";
 import DeleteLink from "./components/delete-link";
 
 export const metadata = constructMetadata({
-  title: "Dub Admin",
+  title: "Artst Admin",
   noIndex: true,
 });
 

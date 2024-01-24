@@ -61,7 +61,7 @@ export default function PasswordSection({
         <Switch
           fn={() => setEnabled(!enabled)}
           checked={enabled}
-          // password protection is only available on Dub's Pro plan
+          // password protection is only available on Artst's Pro plan
           {...(!plan || plan === "free"
             ? {
                 disabledTooltip: (

@@ -1,4 +1,4 @@
-import { DUB_LOGO, capitalize, nFormatter } from "@artst/utils";
+import { ARTST_LOGO, capitalize, nFormatter } from "@artst/utils";
 import {
   Body,
   Container,
@@ -41,18 +41,18 @@ export default function LinksLimitAlert({
     <Html>
       <Head />
       <Preview>
-        Your Dub project, {name} has used {percentage.toString()}% of its links
-        limit for the month.
+        Your Artst project, {name} has used {percentage.toString()}% of its
+        links limit for the month.
       </Preview>
       <Tailwind>
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-10 max-w-[500px] rounded border border-solid border-gray-200 px-10 py-5">
             <Section className="mt-8">
               <Img
-                src={DUB_LOGO}
+                src={ARTST_LOGO}
                 width="40"
                 height="40"
-                alt="Dub"
+                alt="Artst"
                 className="mx-auto my-0"
               />
             </Section>

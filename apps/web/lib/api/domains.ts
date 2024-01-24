@@ -15,7 +15,7 @@ export const validateDomain = async (domain: string) => {
   const validDomain =
     validDomainRegex.test(domain) &&
     // make sure the domain doesn't contain artst.io/artst.io
-    !/^(dub\.co|.*\.dub\.co|dub\.sh|.*\.dub\.sh)$/i.test(domain);
+    !/^(artst\.co|.*\.artst\.co|artst\.sh|.*\.artst\.sh)$/i.test(domain);
 
   if (!validDomain) {
     return "Invalid domain";

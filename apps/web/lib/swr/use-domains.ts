@@ -1,5 +1,5 @@
 import { DomainProps } from "@/lib/types";
-import { DUB_DOMAINS, SHORT_DOMAIN, fetcher } from "@artst/utils";
+import { ARTST_DOMAINS, SHORT_DOMAIN, fetcher } from "@artst/utils";
 import { useParams } from "next/navigation";
 import useSWR from "swr";
 import useProject from "./use-project";
@@ -25,16 +25,16 @@ export default function useDomains({ domain }: { domain?: string } = {}) {
 
   const defaultDomains =
     (projectDefaultDomains &&
-      DUB_DOMAINS.filter((d) => projectDefaultDomains?.includes(d.slug))) ||
-    DUB_DOMAINS;
+      ARTST_DOMAINS.filter((d) => projectDefaultDomains?.includes(d.slug))) ||
+    ARTST_DOMAINS;
 
   const allDomains = [
     ...(data || []),
-    ...(slug !== "dub" ? defaultDomains : []),
+    ...(slug !== "artst" ? defaultDomains : []),
   ];
   const allActiveDomains = [
     ...(projectDomains || []),
-    ...(slug !== "dub" ? defaultDomains : []),
+    ...(slug !== "artst" ? defaultDomains : []),
   ];
 
   const primaryDomain =

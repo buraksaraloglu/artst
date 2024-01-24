@@ -1,8 +1,8 @@
 const logTypeToEnv = {
-  alerts: process.env.DUB_SLACK_HOOK_ALERTS,
-  cron: process.env.DUB_SLACK_HOOK_CRON,
-  links: process.env.DUB_SLACK_HOOK_LINKS,
-  errors: process.env.DUB_SLACK_HOOK_ERRORS,
+  alerts: process.env.ARTST_SLACK_HOOK_ALERTS,
+  cron: process.env.ARTST_SLACK_HOOK_CRON,
+  links: process.env.ARTST_SLACK_HOOK_LINKS,
+  errors: process.env.ARTST_SLACK_HOOK_ERRORS,
 };
 
 export const log = async ({
@@ -16,10 +16,10 @@ export const log = async ({
 }) => {
   if (
     process.env.NODE_ENV === "development" ||
-    !process.env.DUB_SLACK_HOOK_ALERTS ||
-    !process.env.DUB_SLACK_HOOK_CRON ||
-    !process.env.DUB_SLACK_HOOK_LINKS ||
-    !process.env.DUB_SLACK_HOOK_ERRORS
+    !process.env.ARTST_SLACK_HOOK_ALERTS ||
+    !process.env.ARTST_SLACK_HOOK_CRON ||
+    !process.env.ARTST_SLACK_HOOK_LINKS ||
+    !process.env.ARTST_SLACK_HOOK_ERRORS
   ) {
     console.log(message);
   }
@@ -46,6 +46,6 @@ export const log = async ({
       }),
     });
   } catch (e) {
-    console.log(`Failed to log to Dub Slack. Error: ${e}`);
+    console.log(`Failed to log to Artst Slack. Error: ${e}`);
   }
 };

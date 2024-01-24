@@ -27,10 +27,10 @@ async function main() {
     body: JSON.stringify(
       users.map(({ name, email }) => {
         return {
-          from: "Steven from Dub <steven@ship.artst.io>",
+          from: "Steven from Artst <steven@ship.artst.io>",
           to: email,
-          subject: "Hello from Dub",
-          text: `Hi ${name},\n\nThis is a test email from Dub.\n\nBest,\nSteven`,
+          subject: "Hello from Artst",
+          text: `Hi ${name},\n\nThis is a test email from Artst.\n\nBest,\nSteven`,
         };
       }),
     ),

@@ -1,4 +1,4 @@
-import { DUB_LOGO } from "@artst/utils";
+import { ARTST_LOGO } from "@artst/utils";
 import {
   Body,
   Container,
@@ -17,7 +17,7 @@ import Footer from "./components/footer";
 export default function InvalidDomain({
   email = "panic@thedis.co",
   domain = "artst.io",
-  projectSlug = "dub",
+  projectSlug = "artst",
   invalidDays = 14,
 }: {
   email: string;
@@ -34,10 +34,10 @@ export default function InvalidDomain({
           <Container className="mx-auto my-10 max-w-[500px] rounded border border-solid border-gray-200 px-10 py-5">
             <Section className="mt-8">
               <Img
-                src={DUB_LOGO}
+                src={ARTST_LOGO}
                 width="40"
                 height="40"
-                alt="Dub"
+                alt="Artst"
                 className="mx-auto my-0"
               />
             </Section>
@@ -46,7 +46,7 @@ export default function InvalidDomain({
             </Heading>
             <Text className="text-sm leading-6 text-black">
               Your domain <code className="text-purple-600">{domain}</code> for
-              your Dub project{" "}
+              your Artst project{" "}
               <Link
                 href={`https://app.artst.io/${projectSlug}`}
                 className="font-medium text-blue-600 no-underline"
@@ -57,7 +57,7 @@ export default function InvalidDomain({
             </Text>
             <Text className="text-sm leading-6 text-black">
               If your domain remains unconfigured for 30 days, it will be
-              automatically deleted from Dub. Please click the link below to
+              automatically deleted from Artst. Please click the link below to
               configure your domain.
             </Text>
             <Section className="my-8 text-center">
@@ -69,7 +69,7 @@ export default function InvalidDomain({
               </Link>
             </Section>
             <Text className="text-sm leading-6 text-black">
-              If you do not want to keep this domain on Dub, you can{" "}
+              If you do not want to keep this domain on Artst, you can{" "}
               <Link
                 href={`https://app.artst.io/${projectSlug}/domains`}
                 className="font-medium text-blue-600 no-underline"

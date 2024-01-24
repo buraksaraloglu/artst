@@ -11,11 +11,11 @@ import {
   validateDomain,
 } from "@/lib/api/domains";
 import { NextResponse } from "next/server";
-import { DUB_PROJECT_ID, isDubDomain } from "@artst/utils";
+import { ARTST_PROJECT_ID, isArtstDomain } from "@artst/utils";
 
 // GET /api/projects/[slug]/domains/[domain] – get a project's domain
 export const GET = withAuth(async ({ domain, project }) => {
-  if (isDubDomain(domain) && project.id !== DUB_PROJECT_ID) {
+  if (isArtstDomain(domain) && project.id !== ARTST_PROJECT_ID) {
     return new Response("Domain does not belong to project.", {
       status: 403,
     });
@@ -55,7 +55,7 @@ export const PUT = withAuth(async ({ req, project, domain }) => {
     archived,
   } = await req.json();
 
-  if (isDubDomain(domain) && project.id !== DUB_PROJECT_ID) {
+  if (isArtstDomain(domain) && project.id !== ARTST_PROJECT_ID) {
     return new Response("Domain does not belong to project.", {
       status: 403,
     });
@@ -146,7 +146,7 @@ export const PUT = withAuth(async ({ req, project, domain }) => {
 
 // DELETE /api/projects/[slug]/domains/[domain] - delete a project's domain
 export const DELETE = withAuth(async ({ domain, project }) => {
-  if (isDubDomain(domain) && project.id !== DUB_PROJECT_ID) {
+  if (isArtstDomain(domain) && project.id !== ARTST_PROJECT_ID) {
     return new Response("Domain does not belong to project.", {
       status: 403,
     });

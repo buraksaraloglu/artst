@@ -1,4 +1,4 @@
-import { DUB_LOGO } from "@artst/utils";
+import { ARTST_LOGO } from "@artst/utils";
 import {
   Body,
   Container,
@@ -17,7 +17,7 @@ import Footer from "./components/footer";
 export default function DomainDeleted({
   email = "panic@thedis.co",
   domain = "artst.io",
-  projectSlug = "dub",
+  projectSlug = "artst",
 }: {
   email: string;
   domain: string;
@@ -32,10 +32,10 @@ export default function DomainDeleted({
           <Container className="mx-auto my-10 max-w-[500px] rounded border border-solid border-gray-200 px-10 py-5">
             <Section className="mt-8">
               <Img
-                src={DUB_LOGO}
+                src={ARTST_LOGO}
                 width="40"
                 height="40"
-                alt="Dub"
+                alt="Artst"
                 className="mx-auto my-0"
               />
             </Section>
@@ -44,7 +44,7 @@ export default function DomainDeleted({
             </Heading>
             <Text className="text-sm leading-6 text-black">
               Your domain <code className="text-purple-600">{domain}</code> for
-              your Dub project{" "}
+              your Artst project{" "}
               <Link
                 href={`https://app.artst.io/${projectSlug}`}
                 className="font-medium text-blue-600 no-underline"
@@ -52,11 +52,11 @@ export default function DomainDeleted({
                 {projectSlug}↗
               </Link>{" "}
               has been invalid for 30 days. As a result, it has been deleted
-              from Dub.
+              from Artst.
             </Text>
             <Text className="text-sm leading-6 text-black">
               If you would like to restore the domain, you can easily create it
-              again on Dub with the link below.
+              again on Artst with the link below.
             </Text>
             <Section className="my-8 text-center">
               <Link
@@ -67,7 +67,7 @@ export default function DomainDeleted({
               </Link>
             </Section>
             <Text className="text-sm leading-6 text-black">
-              If you did not want to keep using this domain on Dub anyway, you
+              If you did not want to keep using this domain on Artst anyway, you
               can simply ignore this email.
             </Text>
             <Footer email={email} />

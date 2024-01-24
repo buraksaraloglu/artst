@@ -1,5 +1,5 @@
 import { Background, Logo } from "@artst/ui";
-import { constructMetadata, isDubDomain } from "@artst/utils";
+import { constructMetadata, isArtstDomain } from "@artst/utils";
 import prisma from "@/lib/prisma";
 import PasswordForm from "./form";
 import { notFound, redirect } from "next/navigation";
@@ -40,12 +40,12 @@ export async function generateMetadata({
 
   return constructMetadata({
     title:
-      isDubDomain(domain) || link.project?.plan === "free"
+      isArtstDomain(domain) || link.project?.plan === "free"
         ? `${title} - artst.io`
         : title,
     description,
     image,
-    ...(!isDubDomain(domain) &&
+    ...(!isArtstDomain(domain) &&
       link.project?.plan !== "free" &&
       link.project?.logo && {
         icons: link.project.logo,
@@ -116,7 +116,7 @@ export default async function PasswordProtectedLinkPage({
       <Background />
       <div className="w-full max-w-md overflow-hidden rounded-2xl border border-gray-100 shadow-xl">
         <div className="flex flex-col items-center justify-center space-y-3 border-b border-gray-200 bg-white px-4 py-6 pt-8 text-center sm:px-16">
-          {!isDubDomain(domain) &&
+          {!isArtstDomain(domain) &&
           link.project?.plan !== "free" &&
           link.project?.logo ? (
             <img

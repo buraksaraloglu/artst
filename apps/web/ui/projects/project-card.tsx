@@ -5,7 +5,7 @@ import { BlurImage } from "@/ui/shared/blur-image";
 import { CheckCircleFill, XCircleFill } from "@/ui/shared/icons";
 import { Badge, InlineSnippet, NumberTooltip, Tooltip } from "@artst/ui";
 import {
-  DUB_DOMAINS,
+  ARTST_DOMAINS,
   GOOGLE_FAVICON_URL,
   HOME_DOMAIN,
   cn,
@@ -43,8 +43,8 @@ export default function ProjectCard({
   const isMigratedProject = user?.migratedProject === id;
 
   const defaultDomains = metadata?.defaultDomains
-    ? DUB_DOMAINS.filter((d) => metadata?.defaultDomains?.includes(d.slug))
-    : DUB_DOMAINS;
+    ? ARTST_DOMAINS.filter((d) => metadata?.defaultDomains?.includes(d.slug))
+    : ARTST_DOMAINS;
 
   const domains = projectDomains.length > 0 ? projectDomains : defaultDomains;
 
@@ -62,7 +62,7 @@ export default function ProjectCard({
               migrated to a custom project.
             </p>
             <a
-              href={`${HOME_DOMAIN}/changelog/dub-links-updates`}
+              href={`${HOME_DOMAIN}/changelog/artst-links-updates`}
               target="_blank"
               className="mt-1 block text-gray-500 underline underline-offset-4 hover:text-gray-800"
             >

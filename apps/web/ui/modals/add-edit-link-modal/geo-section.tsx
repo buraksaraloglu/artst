@@ -70,7 +70,7 @@ export default function GeoSection({
         <Switch
           fn={() => setEnabled(!enabled)}
           checked={enabled}
-          // geo targeting is only available on Dub's Pro plan
+          // geo targeting is only available on Artst's Pro plan
           {...(!plan || plan === "free"
             ? {
                 disabledTooltip: (

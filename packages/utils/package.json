@@ -40,13 +40,13 @@
   "homepage": "https://artst.io",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/steven-tey/dub.git"
+    "url": "git+https://github.com/steven-tey/artst.git"
   },
   "bugs": {
-    "url": "https://github.com/steven-tey/dub/issues"
+    "url": "https://github.com/steven-tey/artst/issues"
   },
   "keywords": [
-    "dub",
+    "artst",
     "artst.io",
     "utils",
     "utility",

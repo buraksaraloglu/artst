@@ -65,7 +65,7 @@ export function Footer() {
             </p>
             <div className="flex items-center space-x-2">
               <a
-                href="https://twitter.com/dubdotco"
+                href="https://twitter.com/artstdotco"
                 target="_blank"
                 rel="noreferrer"
                 className="group rounded-md p-2 transition-colors hover:bg-gray-100 active:bg-gray-200"
@@ -75,7 +75,7 @@ export function Footer() {
               </a>
               <div className="h-8 border-l border-gray-200" />
               <a
-                href="https://github.com/dubinc/dub"
+                href="https://github.com/artstinc/artst"
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-md p-2 transition-colors hover:bg-gray-100 active:bg-gray-200"
@@ -85,7 +85,7 @@ export function Footer() {
               </a>
               <div className="h-8 border-l border-gray-200" />
               <a
-                href="https://www.linkedin.com/company/dubinc/"
+                href="https://www.linkedin.com/company/artstinc/"
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-md p-2 transition-colors hover:bg-gray-100 active:bg-gray-200"

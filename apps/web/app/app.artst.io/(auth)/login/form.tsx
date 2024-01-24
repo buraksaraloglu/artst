@@ -126,7 +126,7 @@ export default function LoginForm() {
             }
             await signIn("saml", undefined, {
               tenant: data.projectId,
-              product: "Dub",
+              product: "Artst",
             });
           });
         }}

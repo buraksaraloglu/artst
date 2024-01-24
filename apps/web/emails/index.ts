@@ -26,7 +26,7 @@ export const sendEmail = async ({
   return resend.emails.send({
     from: marketing
       ? "Steven from artst.io <steven@ship.artst.io>"
-      : process.env.NEXT_PUBLIC_IS_DUB
+      : process.env.NEXT_PUBLIC_IS_ARTST
       ? "artst.io <system@artst.co>"
       : `system@${process.env.NEXT_PUBLIC_APP_DOMAIN}`,
     to: test ? "delivered@resend.dev" : email,

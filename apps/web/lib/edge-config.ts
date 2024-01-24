@@ -51,7 +51,7 @@ export const isWhitelistedEmail = async (email: string) => {
 };
 
 export const isBlacklistedEmail = async (email: string) => {
-  if (!process.env.NEXT_PUBLIC_IS_DUB) {
+  if (!process.env.NEXT_PUBLIC_IS_ARTST) {
     return false;
   }
   let blacklistedEmails;
@@ -64,7 +64,7 @@ export const isBlacklistedEmail = async (email: string) => {
 };
 
 export const isReservedKey = async (key: string) => {
-  if (!process.env.NEXT_PUBLIC_IS_DUB) {
+  if (!process.env.NEXT_PUBLIC_IS_ARTST) {
     return false;
   }
   let reservedKeys;
@@ -77,7 +77,7 @@ export const isReservedKey = async (key: string) => {
 };
 
 export const isReservedUsername = async (key: string) => {
-  if (!process.env.NEXT_PUBLIC_IS_DUB) {
+  if (!process.env.NEXT_PUBLIC_IS_ARTST) {
     return false;
   }
   let reservedUsernames;

@@ -1,4 +1,4 @@
-import { DUB_LOGO } from "@artst/utils";
+import { ARTST_LOGO } from "@artst/utils";
 import {
   Body,
   Container,
@@ -26,21 +26,21 @@ export default function UpgradeEmail({
   return (
     <Html>
       <Head />
-      <Preview>Thank you for upgrading to Dub {plan}!</Preview>
+      <Preview>Thank you for upgrading to Artst {plan}!</Preview>
       <Tailwind>
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-10 max-w-[500px] rounded border border-solid border-gray-200 px-10 py-5">
             <Section className="mt-8">
               <Img
-                src={DUB_LOGO}
+                src={ARTST_LOGO}
                 width="40"
                 height="40"
-                alt="Dub"
+                alt="Artst"
                 className="mx-auto my-0"
               />
             </Section>
             <Heading className="mx-0 my-7 p-0 text-center text-xl font-semibold text-black">
-              Thank you for upgrading to Dub {plan}!
+              Thank you for upgrading to Artst {plan}!
             </Heading>
             <Section className="my-8">
               <Img
@@ -53,8 +53,8 @@ export default function UpgradeEmail({
               Hey{name && ` ${name}`}!
             </Text>
             <Text className="text-sm leading-6 text-black">
-              My name is Steven, and I'm the founder of Dub. I wanted to
-              personally reach out to thank you for upgrading to Dub {plan}!
+              My name is Steven, and I'm the founder of Artst. I wanted to
+              personally reach out to thank you for upgrading to Artst {plan}!
             </Text>
             <Text className="text-sm leading-6 text-black">
               As you might already know, we are a{" "}
@@ -72,7 +72,7 @@ export default function UpgradeEmail({
                 open-source
               </Link>{" "}
               business. Your support means the world to us and helps us continue
-              to build and improve Dub.
+              to build and improve Artst.
             </Text>
             <Text className="text-sm leading-6 text-black">
               On the {plan} plan, you now have access to:
@@ -109,7 +109,7 @@ export default function UpgradeEmail({
               happy to help!
             </Text>
             <Text className="text-sm font-light leading-6 text-gray-400">
-              Steven from Dub
+              Steven from Artst
             </Text>
 
             <Footer email={email} marketing />

@@ -96,7 +96,7 @@ const Form = () => {
           // replace http://artst.io/ or https://artst.io/ with nothing
           const pastedText = e.clipboardData
             .getData("text")
-            .replace(/https?:\/\/dub\.sh\//, "");
+            .replace(/https?:\/\/artst\.io\//, "");
           e.currentTarget.value = pastedText;
 
           // Prevent the default paste behavior

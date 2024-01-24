@@ -106,7 +106,7 @@ export default function OGSection({
         <Switch
           fn={() => setData((prev) => ({ ...prev, proxy: !proxy }))}
           checked={proxy}
-          // custom social media cards is only available on Dub's Pro plan
+          // custom social media cards is only available on Artst's Pro plan
           {...(!plan || plan === "free"
             ? {
                 disabledTooltip: (

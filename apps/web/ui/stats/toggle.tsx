@@ -15,7 +15,7 @@ import {
 } from "@artst/ui";
 import {
   APP_DOMAIN,
-  DUB_LOGO,
+  ARTST_LOGO,
   GOOGLE_FAVICON_URL,
   SHORT_DOMAIN,
   cn,
@@ -82,7 +82,7 @@ export default function Toggle() {
           <div className="flex items-center space-x-2">
             <BlurImage
               alt={name || "Project Logo"}
-              src={logo || DUB_LOGO}
+              src={logo || ARTST_LOGO}
               className="h-6 w-6 flex-shrink-0 overflow-hidden rounded-full"
               width={48}
               height={48}

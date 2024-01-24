@@ -1,6 +1,6 @@
 import slugify from "@sindresorhus/slugify";
 import {
-  DUB_DOMAINS,
+  ARTST_DOMAINS,
   SECOND_LEVEL_DOMAINS,
   SPECIAL_APEX_DOMAINS,
   ccTLDs,
@@ -66,7 +66,7 @@ export const getApexDomain = (url: string) => {
     ) {
       return parts.slice(-3).join(".");
     }
-    // otherwise, it's a subdomain (e.g. dub.vercel.app), so we return the last 2 parts
+    // otherwise, it's a subdomain (e.g. artst.vercel.app), so we return the last 2 parts
     return parts.slice(-2).join(".");
   }
   // if it's a normal domain (e.g. artst.io), we return the domain
@@ -86,6 +86,6 @@ export const getDomainWithoutWWW = (url: string) => {
   }
 };
 
-export const isDubDomain = (domain: string) => {
-  return DUB_DOMAINS.some((d) => d.slug === domain);
+export const isArtstDomain = (domain: string) => {
+  return ARTST_DOMAINS.some((d) => d.slug === domain);
 };

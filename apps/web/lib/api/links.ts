@@ -8,12 +8,12 @@ import prisma from "@/lib/prisma";
 import { redis } from "@/lib/upstash";
 import {
   DEFAULT_REDIRECTS,
-  DUB_DOMAINS,
+  ARTST_DOMAINS,
   SHORT_DOMAIN,
   getDomainWithoutWWW,
   getParamsFromURL,
   getUrlFromString,
-  isDubDomain,
+  isArtstDomain,
   linkConstructor,
   nanoid,
   truncate,
@@ -170,8 +170,8 @@ export async function checkIfKeyExists(domain: string, key: string) {
     if ((await isReservedKey(key)) || DEFAULT_REDIRECTS[key]) {
       return true;
     }
-    // if it's a default Dub domain, check if the key is a reserved key
-  } else if (isDubDomain(domain)) {
+    // if it's a default Artst domain, check if the key is a reserved key
+  } else if (isArtstDomain(domain)) {
     if (await isReservedUsername(key)) {
       return true;
     }
@@ -290,10 +290,10 @@ export async function processLink({
       };
     }
 
-    // checks for other Dub-owned domains (chatg.pt, spti.fi, etc.)
-  } else if (isDubDomain(domain)) {
+    // checks for other Artst-owned domains (chatg.pt, spti.fi, etc.)
+  } else if (isArtstDomain(domain)) {
     // coerce type with ! cause we already checked if it exists
-    const { allowedHostnames } = DUB_DOMAINS.find((d) => d.slug === domain)!;
+    const { allowedHostnames } = ARTST_DOMAINS.find((d) => d.slug === domain)!;
     const urlDomain = getDomainWithoutWWW(url) || "";
     if (!allowedHostnames.includes(urlDomain)) {
       return {

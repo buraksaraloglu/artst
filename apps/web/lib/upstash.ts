@@ -33,7 +33,7 @@ export const ratelimit = (
     redis: ratelimitRedis,
     limiter: Ratelimit.slidingWindow(requests, seconds),
     analytics: true,
-    prefix: "dub",
+    prefix: "artst",
   });
 };
 
@@ -42,7 +42,7 @@ export const ratelimit = (
  * If there's an error, it will be logged to a separate redis list for debugging
  **/
 export async function recordMetatags(url: string, error: boolean) {
-  if (url === "https://github.com/dubinc/dub") {
+  if (url === "https://github.com/artstio/artst") {
     // don't log metatag generation for default URL
     return null;
   }

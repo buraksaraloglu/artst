@@ -1,4 +1,4 @@
-import { DUB_LOGO, linkConstructor, timeAgo } from "@artst/utils";
+import { ARTST_LOGO, linkConstructor, timeAgo } from "@artst/utils";
 import {
   Body,
   Column,
@@ -73,10 +73,10 @@ export default function LinksImported({
           <Container className="mx-auto my-10 max-w-[500px] rounded border border-solid border-gray-200 px-10 py-5">
             <Section className="mt-8">
               <Img
-                src={DUB_LOGO}
+                src={ARTST_LOGO}
                 width="40"
                 height="40"
-                alt="Dub"
+                alt="Artst"
                 className="mx-auto my-0"
               />
             </Section>
@@ -88,7 +88,7 @@ export default function LinksImported({
               <strong>
                 imported {Intl.NumberFormat("en-us").format(count)} links
               </strong>{" "}
-              from {provider} into your Dub project,{" "}
+              from {provider} into your Artst project,{" "}
               <Link
                 href={`https://app.artst.io/${projectSlug}`}
                 className="font-medium text-blue-600 no-underline"

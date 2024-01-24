@@ -4,7 +4,7 @@ import { Link as LinkProps } from "@prisma/client";
 import { PlanProps, ProjectProps } from "../types";
 import { getServerSession } from "next-auth/next";
 import { createHash } from "crypto";
-import { API_DOMAIN, getSearchParams, isDubDomain } from "@artst/utils";
+import { API_DOMAIN, getSearchParams, isArtstDomain } from "@artst/utils";
 import { ratelimit } from "../upstash";
 import { exceededLimitError } from "../api/errors";
 import { isAdmin } from "app/admin.artst.io/actions";
@@ -265,7 +265,7 @@ export const withAuth =
     // prevent unauthorized access to domains that don't belong to the project
     if (
       domain &&
-      !isDubDomain(domain) &&
+      !isArtstDomain(domain) &&
       !project.domains.find((d) => d.slug === domain)
     ) {
       return new Response("Domain does not belong to project.", {
