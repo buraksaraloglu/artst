@@ -110,7 +110,7 @@ export default function LoginForm() {
           disabled={clickedGoogle || clickedSSO}
         />
       </form>
-      <form
+      {/* <form
         onSubmit={async (e) => {
           e.preventDefault();
           setClickedSSO(true);
@@ -131,8 +131,8 @@ export default function LoginForm() {
           });
         }}
         className="flex flex-col space-y-3"
-      >
-        {showSSOOption && (
+      > */}
+      {/* {showSSOOption && (
           <div>
             <div className="mb-4 mt-1 border-t border-gray-300" />
             <div className="flex items-center space-x-2">
@@ -154,8 +154,8 @@ export default function LoginForm() {
               className="mt-1 block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-black focus:outline-none focus:ring-black sm:text-sm"
             />
           </div>
-        )}
-        <Button
+        )} */}
+      {/* <Button
           text="Continue with SAML SSO"
           variant="secondary"
           {...(!showSSOOption && {
@@ -168,8 +168,8 @@ export default function LoginForm() {
           })}
           loading={clickedSSO}
           disabled={clickedGoogle || clickedEmail}
-        />
-      </form>
+        /> */}
+      {/* </form> */}
       {noSuchAccount ? (
         <p className="text-center text-sm text-red-500">
           No such account.{" "}
