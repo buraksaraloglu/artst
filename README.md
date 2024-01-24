@@ -1,30 +1,4 @@
-<a href="https://dub.co">
-  <img alt="Dub – an open-source link management tool for modern marketing teams to create, share, and track short links." src="https://github.com/dubinc/dub/assets/28986134/8f70a87f-4f13-426a-9785-a47f77433edd">
-  <h1 align="center">Dub</h1>
-</a>
-
-<p align="center">
-  An open-source link management tool for modern marketing teams to create, share, and track short links.
-</p>
-
-<p align="center">
-  <a href="https://twitter.com/dubdotco">
-    <img src="https://img.shields.io/twitter/follow/dubdotco?style=flat&label=%40dubdotco&logo=twitter&color=0bf&logoColor=fff" alt="Twitter" />
-  </a>
-  <a href="https://news.ycombinator.com/item?id=32939407"><img src="https://img.shields.io/badge/Hacker%20News-255-%23FF6600" alt="Hacker News"></a>
-  <a href="https://github.com/dubinc/dub/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/dubinc/dub?label=license&logo=github&color=f80&logoColor=fff" alt="License" />
-  </a>
-</p>
-
-<p align="center">
-  <a href="#introduction"><strong>Introduction</strong></a> ·
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#self-hosting"><strong>Self-hosting</strong></a> ·
-  <a href="#tech-stack"><strong>Tech Stack</strong></a> ·
-  <a href="#contributing"><strong>Contributing</strong></a>
-</p>
-<br/>
+# Artst
 
 ## Introduction
 
