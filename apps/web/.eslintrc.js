@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ["@artst/eslint-config/next"],
+  extends: ["@artst/eslint-config/basic"],
 };

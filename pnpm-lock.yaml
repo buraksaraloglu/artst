@@ -255,6 +255,9 @@ importers:
         specifier: ^0.6.8
         version: 0.6.8(@types/react-dom@18.2.14)(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)
     devDependencies:
+      '@artst/eslint-config':
+        specifier: '*'
+        version: link:../../packages/eslint-config
       '@trivago/prettier-plugin-sort-imports':
         specifier: ^4.0.0
         version: 4.0.0(@vue/compiler-sfc@3.3.4)(prettier@2.8.0)
