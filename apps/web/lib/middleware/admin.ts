@@ -18,15 +18,16 @@ export default async function AdminMiddleware(req: NextRequest) {
     user?: UserProps;
   };
 
-  const response = await conn
+  isAdmin = await conn
     .execute("SELECT projectId FROM ProjectUsers WHERE userId = ?", [
       session?.user?.id,
     ])
-    .then((res) => res.rows[0] as { projectId: string } | undefined);
-
-  if (response?.projectId === ARTST_PROJECT_ID) {
-    isAdmin = true;
-  }
+    .then((res) =>
+      res.rows.some(
+        (row: { projectId: string }) => row.projectId === ARTST_PROJECT_ID,
+      ),
+    )
+    .catch(() => false);
 
   if (path === "/login" && isAdmin) {
     return NextResponse.redirect(new URL("/", req.url));
