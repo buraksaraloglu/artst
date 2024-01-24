@@ -1,13 +1,3 @@
-const REDIRECT_SEGMENTS = [
-  "pricing",
-  "blog",
-  "help",
-  "changelog",
-  "tools",
-  "stats",
-  "_static",
-];
-
 const path = require("path");
 const { NormalModuleReplacementPlugin } = require("webpack");
 
@@ -90,94 +80,6 @@ module.exports = {
             value: "DENY",
           },
         ],
-      },
-    ];
-  },
-  async redirects() {
-    return [
-      {
-        source: "/",
-        has: [
-          {
-            type: "host",
-            value: "app.artst.io",
-          },
-        ],
-        destination: "https://app.artst.io",
-        permanent: true,
-        statusCode: 301,
-      },
-      {
-        source: "/:path*",
-        has: [
-          {
-            type: "host",
-            value: "app.artst.io",
-          },
-        ],
-        destination: "https://app.artst.io/:path*",
-        permanent: true,
-        statusCode: 301,
-      },
-      {
-        source: "/metatags",
-        has: [
-          {
-            type: "host",
-            value: "artst.io",
-          },
-        ],
-        destination: "https://artst.io/tools/metatags",
-        permanent: true,
-        statusCode: 301,
-      },
-      {
-        source: "/metatags",
-        has: [
-          {
-            type: "host",
-            value: "artst.io",
-          },
-        ],
-        destination: "/tools/metatags",
-        permanent: true,
-        statusCode: 301,
-      },
-      {
-        source: "/",
-        has: [
-          {
-            type: "host",
-            value: "staging.artst.io",
-          },
-        ],
-        destination: "https://artst.io",
-        permanent: true,
-        statusCode: 301,
-      },
-      {
-        source: "/",
-        has: [
-          {
-            type: "host",
-            value: "preview.artst.io",
-          },
-        ],
-        destination: "https://preview.artst.io",
-        permanent: true,
-        statusCode: 301,
-      },
-      {
-        source: "/",
-        has: [
-          {
-            type: "host",
-            value: "admin.artst.io",
-          },
-        ],
-        destination: "https://admin.artst.io",
-        permanent: true,
-        statusCode: 301,
       },
     ];
   },
