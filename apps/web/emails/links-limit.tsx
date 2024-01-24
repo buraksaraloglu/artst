@@ -57,12 +57,12 @@ export default function LinksLimitAlert({
               />
             </Section>
             <Heading className="mx-0 my-7 p-0 text-center text-xl font-semibold text-black">
-              Dub.co Links Limit Alert
+              artst.io Links Limit Alert
             </Heading>
             <Text className="text-sm leading-6 text-black">
-              Your Dub.co project,{" "}
+              Your artst.io project,{" "}
               <Link
-                href={`https://app.dub.co/${slug}`}
+                href={`https://app.artst.io/${slug}`}
                 className="text-black underline"
               >
                 <strong>{name}</strong>
@@ -88,7 +88,7 @@ export default function LinksLimitAlert({
             <Section className="mb-8 text-center">
               <Link
                 className="rounded-full bg-black px-6 py-3 text-center text-[12px] font-semibold text-white no-underline"
-                href={`https://app.dub.co/${slug}?upgrade=${
+                href={`https://app.artst.io/${slug}?upgrade=${
                   plan === "free" ? "pro" : "business"
                 }`}
               >

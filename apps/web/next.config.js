@@ -100,10 +100,10 @@ module.exports = {
         has: [
           {
             type: "host",
-            value: "app.dub.sh",
+            value: "app.artst.io",
           },
         ],
-        destination: "https://app.dub.co",
+        destination: "https://app.artst.io",
         permanent: true,
         statusCode: 301,
       },
@@ -112,50 +112,10 @@ module.exports = {
         has: [
           {
             type: "host",
-            value: "app.dub.sh",
+            value: "app.artst.io",
           },
         ],
-        destination: "https://app.dub.co/:path*",
-        permanent: true,
-        statusCode: 301,
-      },
-      ...REDIRECT_SEGMENTS.map(
-        (segment) => (
-          {
-            source: `/${segment}`,
-            has: [
-              {
-                type: "host",
-                value: "dub.sh",
-              },
-            ],
-            destination: `https://dub.co/${segment}`,
-            permanent: true,
-            statusCode: 301,
-          },
-          {
-            source: `/${segment}/:path*`,
-            has: [
-              {
-                type: "host",
-                value: "dub.sh",
-              },
-            ],
-            destination: `https://dub.co/${segment}/:path*`,
-            permanent: true,
-            statusCode: 301,
-          }
-        ),
-      ),
-      {
-        source: "/metatags",
-        has: [
-          {
-            type: "host",
-            value: "dub.sh",
-          },
-        ],
-        destination: "https://dub.co/tools/metatags",
+        destination: "https://app.artst.io/:path*",
         permanent: true,
         statusCode: 301,
       },
@@ -164,7 +124,19 @@ module.exports = {
         has: [
           {
             type: "host",
-            value: "dub.co",
+            value: "artst.io",
+          },
+        ],
+        destination: "https://artst.io/tools/metatags",
+        permanent: true,
+        statusCode: 301,
+      },
+      {
+        source: "/metatags",
+        has: [
+          {
+            type: "host",
+            value: "artst.io",
           },
         ],
         destination: "/tools/metatags",
@@ -176,10 +148,10 @@ module.exports = {
         has: [
           {
             type: "host",
-            value: "staging.dub.sh",
+            value: "staging.artst.io",
           },
         ],
-        destination: "https://dub.co",
+        destination: "https://artst.io",
         permanent: true,
         statusCode: 301,
       },
@@ -188,10 +160,10 @@ module.exports = {
         has: [
           {
             type: "host",
-            value: "preview.dub.sh",
+            value: "preview.artst.io",
           },
         ],
-        destination: "https://preview.dub.co",
+        destination: "https://preview.artst.io",
         permanent: true,
         statusCode: 301,
       },
@@ -200,10 +172,10 @@ module.exports = {
         has: [
           {
             type: "host",
-            value: "admin.dub.sh",
+            value: "admin.artst.io",
           },
         ],
-        destination: "https://admin.dub.co",
+        destination: "https://admin.artst.io",
         permanent: true,
         statusCode: 301,
       },

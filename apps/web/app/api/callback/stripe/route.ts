@@ -104,7 +104,7 @@ export const POST = async (req: Request) => {
             limiter.schedule(() =>
               sendEmail({
                 email: user.email as string,
-                subject: `Thank you for upgrading to Dub.co ${plan.name}!`,
+                subject: `Thank you for upgrading to artst.io ${plan.name}!`,
                 react: UpgradeEmail({
                   name: user.name,
                   email: user.email as string,
@@ -252,10 +252,10 @@ export const POST = async (req: Request) => {
             mention: true,
           }),
           resend.emails.send({
-            from: "Steven from Dub.co <steven@artst.co>",
+            from: "Steven from artst.io <steven@artst.co>",
             to: projectUsers,
-            subject: "Feedback on your Dub.co experience?",
-            text: "Hey!\n\nI noticed you recently cancelled your Dub.co subscription – we're sorry to see you go!\n\nI'd love to hear your feedback on your experience with Dub – what could we have done better?\n\nThanks!\n\nSteven Tey\nFounder, Dub.co",
+            subject: "Feedback on your artst.io experience?",
+            text: "Hey!\n\nI noticed you recently cancelled your artst.io subscription – we're sorry to see you go!\n\nI'd love to hear your feedback on your experience with Dub – what could we have done better?\n\nThanks!\n\nSteven Tey\nFounder, artst.io",
           }),
         ]);
       }

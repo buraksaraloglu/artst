@@ -27,7 +27,7 @@ async function main() {
     body: JSON.stringify(
       users.map(({ name, email }) => {
         return {
-          from: "Steven from Dub <steven@ship.dub.co>",
+          from: "Steven from Dub <steven@ship.artst.io>",
           to: email,
           subject: "Hello from Dub",
           text: `Hi ${name},\n\nThis is a test email from Dub.\n\nBest,\nSteven`,

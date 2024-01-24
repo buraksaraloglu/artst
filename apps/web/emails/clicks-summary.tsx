@@ -20,8 +20,8 @@ import Footer from "./components/footer";
 
 export default function ClicksSummary({
   email = "panic@thedis.co",
-  appName = "Dub.co",
-  appDomain = "dub.co",
+  appName = "artst.io",
+  appDomain = "artst.io",
   projectName = "Acme",
   projectSlug = "acme",
   totalClicks = 63689,

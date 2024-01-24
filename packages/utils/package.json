@@ -1,6 +1,6 @@
 {
   "name": "@artst/utils",
-  "description": "Utility functions and constants for Dub.co",
+  "description": "Utility functions and constants for artst.io",
   "version": "0.0.27",
   "sideEffects": false,
   "main": "./dist/index.js",
@@ -37,7 +37,7 @@
     "tailwind-merge": "^1.13.2"
   },
   "author": "Steven Tey <stevensteel97@gmail.com>",
-  "homepage": "https://dub.co",
+  "homepage": "https://artst.io",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/steven-tey/dub.git"
@@ -47,7 +47,7 @@
   },
   "keywords": [
     "dub",
-    "dub.co",
+    "artst.io",
     "utils",
     "utility",
     "functions"

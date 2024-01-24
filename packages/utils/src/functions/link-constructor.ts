@@ -1,5 +1,5 @@
 export function linkConstructor({
-  domain = "dub.sh",
+  domain = "artst.io",
   key,
   localhost,
   pretty,

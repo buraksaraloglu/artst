@@ -20,7 +20,7 @@ export async function GET(req: NextRequest) {
     satoshiBold,
   ]);
 
-  const domain = req.nextUrl.searchParams.get("domain") || "dub.sh";
+  const domain = req.nextUrl.searchParams.get("domain") || "artst.io";
   const key = req.nextUrl.searchParams.get("key") || "github";
 
   const data = await getLinkViaEdge(domain, key);
@@ -50,7 +50,7 @@ export async function GET(req: NextRequest) {
           flexDirection: "column",
           alignItems: "center",
           backgroundColor: "white",
-          backgroundImage: `url(https://dub.co/_static/background.png)`,
+          backgroundImage: `url(https://artst.io/_static/background.png)`,
         }}
       >
         <img

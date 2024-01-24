@@ -69,7 +69,7 @@ export const getApexDomain = (url: string) => {
     // otherwise, it's a subdomain (e.g. dub.vercel.app), so we return the last 2 parts
     return parts.slice(-2).join(".");
   }
-  // if it's a normal domain (e.g. dub.co), we return the domain
+  // if it's a normal domain (e.g. artst.io), we return the domain
   return domain;
 };
 

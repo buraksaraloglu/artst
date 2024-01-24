@@ -16,7 +16,7 @@ import Footer from "./components/footer";
 
 export default function DomainDeleted({
   email = "panic@thedis.co",
-  domain = "dub.sh",
+  domain = "artst.io",
   projectSlug = "dub",
 }: {
   email: string;
@@ -46,7 +46,7 @@ export default function DomainDeleted({
               Your domain <code className="text-purple-600">{domain}</code> for
               your Dub project{" "}
               <Link
-                href={`https://app.dub.co/${projectSlug}`}
+                href={`https://app.artst.io/${projectSlug}`}
                 className="font-medium text-blue-600 no-underline"
               >
                 {projectSlug}↗
@@ -61,7 +61,7 @@ export default function DomainDeleted({
             <Section className="my-8 text-center">
               <Link
                 className="rounded-full bg-black px-6 py-3 text-center text-[12px] font-semibold text-white no-underline"
-                href={`https://app.dub.co/${projectSlug}/domains`}
+                href={`https://app.artst.io/${projectSlug}/domains`}
               >
                 Add a domain
               </Link>

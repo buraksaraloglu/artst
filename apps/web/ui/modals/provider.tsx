@@ -58,7 +58,7 @@ export default function ModalProvider({ children }: { children: ReactNode }) {
     useImportRebrandlyModal();
 
   const [hashes, setHashes] = useCookies<SimpleLinkProps[]>("hashes__dub", [], {
-    domain: !!process.env.NEXT_PUBLIC_VERCEL_URL ? ".dub.co" : undefined,
+    domain: !!process.env.NEXT_PUBLIC_VERCEL_URL ? ".artst.io" : undefined,
   });
 
   const { slug, error } = useProject();

@@ -5,7 +5,7 @@ async function main() {
   const users = await prisma.link.groupBy({
     by: ["userId"],
     where: {
-      domain: "dub.sh",
+      domain: "artst.io",
     },
     _count: {
       userId: true,

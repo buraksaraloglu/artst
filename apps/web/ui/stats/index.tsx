@@ -1,9 +1,9 @@
 "use client";
 /*
   This Stats component lives in 3 different places:
-  1. Project link page, e.g. app.dub.co/dub/dub.sh/github
-  2. Generic Dub.co link page, e.g. app.dub.co/links/steven
-  3. Public stats page, e.g. dub.co/stats/github, stey.me/stats/weathergpt
+  1. Project link page, e.g. app.artst.io/dub/artst.io/github
+  2. Generic artst.io link page, e.g. app.artst.io/links/steven
+  3. Public stats page, e.g. artst.io/stats/github, stey.me/stats/weathergpt
 
   We use the `useEndpoint()` hook to get the correct layout
 */
@@ -66,14 +66,14 @@ export default function Stats({
   const interval = searchParams?.get("interval") || "24h";
 
   const { basePath, domain, baseApiPath } = useMemo(() => {
-    // Project link analytics page, e.g. app.dub.co/dub/analytics?domain=dub.sh&key=github
+    // Project link analytics page, e.g. app.artst.io/dub/analytics?domain=artst.io&key=github
     if (slug) {
       return {
         basePath: `/${slug}/analytics`,
         baseApiPath: `/api/projects/${slug}/stats`,
         domain: domainSlug,
       };
-      // Generic links analytics page, e.g. app.dub.co/analytics?domain=dub.sh&key=github
+      // Generic links analytics page, e.g. app.artst.io/analytics?domain=artst.io&key=github
     } else if (pathname === "/analytics") {
       return {
         basePath: `/analytics`,
@@ -82,7 +82,7 @@ export default function Stats({
       };
     }
 
-    // Public stats page, e.g. dub.co/stats/github, stey.me/stats/weathergpt
+    // Public stats page, e.g. artst.io/stats/github, stey.me/stats/weathergpt
     return {
       basePath: `/stats/${key}`,
       baseApiPath: `/api/edge/stats`,
@@ -119,7 +119,7 @@ export default function Stats({
         basePath, // basePath for the page (e.g. /stats/[key], /links/[key], /[slug]/[domain]/[key])
         baseApiPath, // baseApiPath for the API (e.g. /api/edge/links/[key]/stats)
         queryString,
-        domain: domain || undefined, // domain for the link (e.g. dub.sh, stey.me, etc.)
+        domain: domain || undefined, // domain for the link (e.g. artst.io, stey.me, etc.)
         key: key ? decodeURIComponent(key) : undefined, // link key (e.g. github, weathergpt, etc.)
         interval, // time interval (e.g. 24h, 7d, 30d, etc.)
         totalClicks, // total clicks for the link

@@ -58,7 +58,7 @@ export default function ProjectCard({
           <ProjectArrow className="absolute -bottom-20 right-56 z-10 text-violet-600 lg:right-0" />
           <div className="absolute -bottom-28 right-0 z-10 w-full max-w-[16rem] rounded-lg border border-gray-200 bg-white p-3 text-center text-sm shadow lg:-right-56">
             <p>
-              Your <InlineSnippet>dub.sh</InlineSnippet> links have been
+              Your <InlineSnippet>artst.io</InlineSnippet> links have been
               migrated to a custom project.
             </p>
             <a

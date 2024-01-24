@@ -7,7 +7,7 @@ import { createHash } from "crypto";
 import { API_DOMAIN, getSearchParams, isDubDomain } from "@artst/utils";
 import { ratelimit } from "../upstash";
 import { exceededLimitError } from "../api/errors";
-import { isAdmin } from "app/admin.dub.co/actions";
+import { isAdmin } from "app/admin.artst.io/actions";
 
 export interface Session {
   user: {
@@ -115,7 +115,7 @@ export const withAuth =
     if (authorizationHeader) {
       if (!authorizationHeader.includes("Bearer ")) {
         return new Response(
-          "Misconfigured authorization header. Did you forget to add 'Bearer '? Learn more: https://dub.sh/auth ",
+          "Misconfigured authorization header. Did you forget to add 'Bearer '? Learn more: https://artst.io/auth ",
           {
             status: 400,
           },
@@ -416,7 +416,7 @@ export const withSession =
     if (authorizationHeader) {
       if (!authorizationHeader.includes("Bearer ")) {
         return new Response(
-          "Misconfigured authorization header. Did you forget to add 'Bearer '? Learn more: https://dub.sh/auth ",
+          "Misconfigured authorization header. Did you forget to add 'Bearer '? Learn more: https://artst.io/auth ",
           {
             status: 400,
           },

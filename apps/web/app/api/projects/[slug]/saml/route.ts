@@ -17,7 +17,7 @@ export const GET = withAuth(async ({ project }) => {
     issuer: samlAudience,
     acs:
       process.env.NODE_ENV === "production"
-        ? "https://api.dub.co/auth/saml/callback"
+        ? "https://api.artst.io/auth/saml/callback"
         : `${APP_DOMAIN_WITH_NGROK}/api/auth/saml/callback`,
   };
 

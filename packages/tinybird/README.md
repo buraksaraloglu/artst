@@ -1,4 +1,4 @@
-# Dub.co Tinybird Setup
+# artst.io Tinybird Setup
 
 ```bash
 ├── datasources

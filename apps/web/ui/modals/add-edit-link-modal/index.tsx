@@ -417,7 +417,7 @@ function AddEditLinkModal({
                     placeholder={
                       domains?.find(({ slug }) => slug === domain)
                         ?.placeholder ||
-                      "https://dub.co/help/article/what-is-dub"
+                      "https://artst.io/help/article/what-is-dub"
                     }
                     value={url}
                     autoFocus={!key}

@@ -318,7 +318,7 @@ export const authOptions: NextAuthOptions = {
               },
             ),
             sendEmail({
-              subject: "Welcome to Dub.co!",
+              subject: "Welcome to artst.io!",
               email,
               react: WelcomeEmail({
                 email,

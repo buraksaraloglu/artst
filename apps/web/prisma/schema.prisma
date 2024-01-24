@@ -156,7 +156,7 @@ model Domain {
   verified    Boolean   @default(false)
   target      String?
   type        String    @default("redirect")
-  placeholder String    @default("https://dub.co/help/article/what-is-dub")
+  placeholder String    @default("https://artst.io/help/article/what-is-dub")
   description String?
   project     Project?  @relation(fields: [projectId], references: [id], onDelete: Cascade)
   projectId   String?
@@ -177,7 +177,7 @@ model Domain {
 
 model Link {
   id        String    @id @default(cuid())
-  domain    String // domain of the link (e.g. dub.sh) – also stored on Redis
+  domain    String // domain of the link (e.g. artst.io) – also stored on Redis
   key       String // key of the link (e.g. /github) – also stored on Redis
   url       String    @db.LongText // target url (e.g. https://github.com/dubinc/dub) – also stored on Redis
   archived  Boolean   @default(false) // whether the link is archived or not
@@ -185,9 +185,9 @@ model Link {
   password  String? // password to access the link
 
   proxy       Boolean @default(false) // Proxy to use custom OG tags (stored on redis) – if false, will use OG tags from target url
-  title       String? // OG title for the link (e.g. Dub.co - Open-Source Link Management Infrastructure)
+  title       String? // OG title for the link (e.g. artst.io - Open-Source Link Management Infrastructure)
   description String? @db.VarChar(280) // OG description for the link (e.g. An open-source link management tool for modern marketing teams to create, share, and track short links.)
-  image       String? @db.LongText // OG image for the link (e.g. https://dub.sh/og-image.png)
+  image       String? @db.LongText // OG image for the link (e.g. https://artst.io/og-image.png)
 
   // UTM parameters
   utm_source   String? // UTM source for the link (e.g. youtube.com)

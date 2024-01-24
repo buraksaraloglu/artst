@@ -35,6 +35,6 @@ export default async function AdminMiddleware(req: NextRequest) {
   }
 
   return NextResponse.rewrite(
-    new URL(`/admin.dub.co${path === "/" ? "" : path}`, req.url),
+    new URL(`/admin.artst.io${path === "/" ? "" : path}`, req.url),
   );
 }

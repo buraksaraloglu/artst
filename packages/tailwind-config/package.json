@@ -1,6 +1,6 @@
 {
   "name": "@artst/tailwind-config",
-  "description": "Tailwindcss config for Dub.co",
+  "description": "Tailwindcss config for artst.io",
   "version": "0.0.4",
   "main": "index.ts",
   "types": "index.ts",
@@ -14,7 +14,7 @@
     "tailwindcss-radix": "^2.8.0"
   },
   "author": "Steven Tey <stevensteel97@gmail.com>",
-  "homepage": "https://dub.co",
+  "homepage": "https://artst.io",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/steven-tey/dub.git"
@@ -24,7 +24,7 @@
   },
   "keywords": [
     "dub",
-    "dub.co",
+    "artst.io",
     "tailwind",
     "tailwindcss"
   ],

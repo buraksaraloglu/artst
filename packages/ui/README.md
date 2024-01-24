@@ -1,6 +1,6 @@
 # `@artst/ui`
 
-`@artst/ui` is a library of React components that are used across Dub.co's web applications.
+`@artst/ui` is a library of React components that are used across artst.io's web applications.
 
 ## Installation
 

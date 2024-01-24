@@ -52,7 +52,7 @@ export const intervalData = {
     granularity: "month",
   },
   all: {
-    // Dub.co founding date
+    // artst.io founding date
     startDate: new Date("2022-09-22"),
     granularity: "month",
   },

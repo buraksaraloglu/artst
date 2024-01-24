@@ -7,19 +7,19 @@ export function GET(): NextResponse<OpenAPIV3.Document> {
   return NextResponse.json({
     openapi: "3.0.3",
     info: {
-      title: "Dub.co API",
+      title: "artst.io API",
       description:
         "Dub is an open-source link management tool for modern marketing teams to create, share, and track short links.",
       contact: {
         email: "support@artst.co",
-        name: "Dub.co Support",
-        url: "https://dub.co/help",
+        name: "artst.io Support",
+        url: "https://artst.io/help",
       },
       version: "0.0.1",
     },
     servers: [
       {
-        url: "https://api.dub.co",
+        url: "https://api.artst.io",
         description: "Production API",
       },
     ],
@@ -39,12 +39,12 @@ export function GET(): NextResponse<OpenAPIV3.Document> {
             {
               name: "projectSlug",
               description:
-                "The slug for the project to retrieve links for. E.g. for app.dub.co/acme, the projectSlug is 'acme'.",
+                "The slug for the project to retrieve links for. E.g. for app.artst.io/acme, the projectSlug is 'acme'.",
               in: "query",
               required: true,
               schema: {
                 description:
-                  "The slug for the project to retrieve links for. E.g. for app.dub.co/acme, the projectSlug is 'acme'.",
+                  "The slug for the project to retrieve links for. E.g. for app.artst.io/acme, the projectSlug is 'acme'.",
                 type: "string",
               },
             },
@@ -161,12 +161,12 @@ export function GET(): NextResponse<OpenAPIV3.Document> {
             {
               name: "projectSlug",
               description:
-                "The slug for the project to create links for. E.g. for app.dub.co/acme, the projectSlug is 'acme'.",
+                "The slug for the project to create links for. E.g. for app.artst.io/acme, the projectSlug is 'acme'.",
               in: "query",
               required: true,
               schema: {
                 description:
-                  "The slug for the project to create links for. E.g. for app.dub.co/acme, the projectSlug is 'acme'.",
+                  "The slug for the project to create links for. E.g. for app.artst.io/acme, the projectSlug is 'acme'.",
                 type: "string",
               },
             },
@@ -212,36 +212,36 @@ export function GET(): NextResponse<OpenAPIV3.Document> {
             {
               name: "projectSlug",
               description:
-                "The slug for the project that the link belongs to. E.g. for app.dub.co/acme, the projectSlug is 'acme'.",
+                "The slug for the project that the link belongs to. E.g. for app.artst.io/acme, the projectSlug is 'acme'.",
               in: "query",
               required: true,
               schema: {
                 description:
-                  "The slug for the project that the link belongs to. E.g. for app.dub.co/acme, the projectSlug is 'acme'.",
+                  "The slug for the project that the link belongs to. E.g. for app.artst.io/acme, the projectSlug is 'acme'.",
                 type: "string",
               },
             },
             {
               name: "domain",
               description:
-                "The domain of the link to retrieve. E.g. for dub.sh/github, the domain is 'dub.sh'.",
+                "The domain of the link to retrieve. E.g. for artst.io/github, the domain is 'artst.io'.",
               in: "query",
               required: true,
               schema: {
                 description:
-                  "The domain of the link to retrieve. E.g. for dub.sh/github, the domain is 'dub.sh'.",
+                  "The domain of the link to retrieve. E.g. for artst.io/github, the domain is 'artst.io'.",
                 type: "string",
               },
             },
             {
               name: "key",
               description:
-                "The key of the link to retrieve. E.g. for dub.sh/github, the key is 'github'.",
+                "The key of the link to retrieve. E.g. for artst.io/github, the key is 'github'.",
               in: "query",
               required: true,
               schema: {
                 description:
-                  "The key of the link to retrieve. E.g. for dub.sh/github, the key is 'github'.",
+                  "The key of the link to retrieve. E.g. for artst.io/github, the key is 'github'.",
                 type: "string",
               },
             },
@@ -274,12 +274,12 @@ export function GET(): NextResponse<OpenAPIV3.Document> {
             {
               name: "projectSlug",
               description:
-                "The slug for the project that the link belongs to. E.g. for app.dub.co/acme, the projectSlug is 'acme'.",
+                "The slug for the project that the link belongs to. E.g. for app.artst.io/acme, the projectSlug is 'acme'.",
               in: "query",
               required: true,
               schema: {
                 description:
-                  "The slug for the project that the link belongs to. E.g. for app.dub.co/acme, the projectSlug is 'acme'.",
+                  "The slug for the project that the link belongs to. E.g. for app.artst.io/acme, the projectSlug is 'acme'.",
                 type: "string",
               },
             },
@@ -333,12 +333,12 @@ export function GET(): NextResponse<OpenAPIV3.Document> {
             {
               name: "projectSlug",
               description:
-                "The slug for the project that the link belongs to. E.g. for app.dub.co/acme, the projectSlug is 'acme'.",
+                "The slug for the project that the link belongs to. E.g. for app.artst.io/acme, the projectSlug is 'acme'.",
               in: "query",
               required: true,
               schema: {
                 description:
-                  "The slug for the project that the link belongs to. E.g. for app.dub.co/acme, the projectSlug is 'acme'.",
+                  "The slug for the project that the link belongs to. E.g. for app.artst.io/acme, the projectSlug is 'acme'.",
                 type: "string",
               },
             },
@@ -384,12 +384,12 @@ export function GET(): NextResponse<OpenAPIV3.Document> {
             {
               name: "projectSlug",
               description:
-                "The slug for the project to create links for. E.g. for app.dub.co/acme, the projectSlug is 'acme'.",
+                "The slug for the project to create links for. E.g. for app.artst.io/acme, the projectSlug is 'acme'.",
               in: "query",
               required: true,
               schema: {
                 description:
-                  "The slug for the project to create links for. E.g. for app.dub.co/acme, the projectSlug is 'acme'.",
+                  "The slug for the project to create links for. E.g. for app.artst.io/acme, the projectSlug is 'acme'.",
                 type: "string",
               },
             },
@@ -467,12 +467,12 @@ export function GET(): NextResponse<OpenAPIV3.Document> {
             {
               name: "projectSlug",
               description:
-                "The slug for the project to retrieve. E.g. for app.dub.co/acme, the projectSlug is 'acme'.",
+                "The slug for the project to retrieve. E.g. for app.artst.io/acme, the projectSlug is 'acme'.",
               in: "path",
               required: true,
               schema: {
                 description:
-                  "The slug for the project to retrieve. E.g. for app.dub.co/acme, the projectSlug is 'acme'.",
+                  "The slug for the project to retrieve. E.g. for app.artst.io/acme, the projectSlug is 'acme'.",
                 type: "string",
               },
             },
@@ -505,12 +505,12 @@ export function GET(): NextResponse<OpenAPIV3.Document> {
             {
               name: "projectSlug",
               description:
-                "The slug for the project to retrieve tags for. E.g. for app.dub.co/acme, the projectSlug is 'acme'.",
+                "The slug for the project to retrieve tags for. E.g. for app.artst.io/acme, the projectSlug is 'acme'.",
               in: "path",
               required: true,
               schema: {
                 description:
-                  "The slug for the project to retrieve tags for. E.g. for app.dub.co/acme, the projectSlug is 'acme'.",
+                  "The slug for the project to retrieve tags for. E.g. for app.artst.io/acme, the projectSlug is 'acme'.",
                 type: "string",
               },
             },
@@ -544,12 +544,12 @@ export function GET(): NextResponse<OpenAPIV3.Document> {
             {
               name: "projectSlug",
               description:
-                "The slug for the project to create tags for. E.g. for app.dub.co/acme, the projectSlug is 'acme'.",
+                "The slug for the project to create tags for. E.g. for app.artst.io/acme, the projectSlug is 'acme'.",
               in: "path",
               required: true,
               schema: {
                 description:
-                  "The slug for the project to create tags for. E.g. for app.dub.co/acme, the projectSlug is 'acme'.",
+                  "The slug for the project to create tags for. E.g. for app.artst.io/acme, the projectSlug is 'acme'.",
                 type: "string",
               },
             },
@@ -614,7 +614,7 @@ export function GET(): NextResponse<OpenAPIV3.Document> {
             domain: {
               type: "string",
               description:
-                "The domain of the short link. If not provided, the primary domain for the project will be used (or `dub.sh` if the project has no domains).",
+                "The domain of the short link. If not provided, the primary domain for the project will be used (or `artst.io` if the project has no domains).",
             },
             key: {
               type: "string",
@@ -654,21 +654,21 @@ export function GET(): NextResponse<OpenAPIV3.Document> {
             title: {
               type: "string",
               description:
-                "The title of the short link generated via api.dub.co/metatags. Will be used for Custom Social Media Cards if `proxy` is true.",
+                "The title of the short link generated via api.artst.io/metatags. Will be used for Custom Social Media Cards if `proxy` is true.",
               default: null,
               nullable: true,
             },
             description: {
               type: "string",
               description:
-                "The description of the short link generated via api.dub.co/metatags. Will be used for Custom Social Media Cards if `proxy` is true.",
+                "The description of the short link generated via api.artst.io/metatags. Will be used for Custom Social Media Cards if `proxy` is true.",
               default: null,
               nullable: true,
             },
             image: {
               type: "string",
               description:
-                "The image of the short link generated via api.dub.co/metatags. Will be used for Custom Social Media Cards if `proxy` is true.",
+                "The image of the short link generated via api.artst.io/metatags. Will be used for Custom Social Media Cards if `proxy` is true.",
               default: null,
               nullable: true,
             },
@@ -694,7 +694,7 @@ export function GET(): NextResponse<OpenAPIV3.Document> {
             geo: {
               type: "object",
               description:
-                'Geo targeting information for the short link in JSON format {[COUNTRY]: "https://example.com" }. Learn more: https://dub.sh/geo',
+                'Geo targeting information for the short link in JSON format {[COUNTRY]: "https://example.com" }. Learn more: https://artst.io/geo',
               additionalProperties: {
                 type: "string",
                 format: "uri",
@@ -730,7 +730,7 @@ export function GET(): NextResponse<OpenAPIV3.Document> {
             shortLink: {
               type: "string",
               description:
-                "The full URL of the short link, including the https protocol (e.g. https://dub.sh/try).",
+                "The full URL of the short link, including the https protocol (e.g. https://artst.io/try).",
               readOnly: true,
             },
             utm_source: {

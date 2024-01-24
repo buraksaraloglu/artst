@@ -38,7 +38,7 @@ export const FADE_IN_ANIMATION_SETTINGS = {
 export const PAGINATION_LIMIT = 100;
 
 export const SHORT_DOMAIN =
-  process.env.NEXT_PUBLIC_APP_SHORT_DOMAIN || "dub.sh";
+  process.env.NEXT_PUBLIC_APP_SHORT_DOMAIN || "artst.io";
 
 export const HOME_DOMAIN = `https://${process.env.NEXT_PUBLIC_APP_DOMAIN}`;
 
@@ -82,23 +82,23 @@ export const ADMIN_HOSTNAMES = new Set([
 ]);
 
 export const DEFAULT_REDIRECTS = {
-  home: "https://dub.co",
-  dub: "https://dub.co",
-  signin: "https://app.dub.co/login",
-  login: "https://app.dub.co/login",
-  register: "https://app.dub.co/register",
-  signup: "https://app.dub.co/register",
-  app: "https://app.dub.co",
-  dashboard: "https://app.dub.co",
-  links: "https://app.dub.co/links",
-  settings: "https://app.dub.co/settings",
-  welcome: "https://app.dub.co/welcome",
+  home: "https://artst.io",
+  dub: "https://artst.io",
+  signin: "https://app.artst.io/login",
+  login: "https://app.artst.io/login",
+  register: "https://app.artst.io/register",
+  signup: "https://app.artst.io/register",
+  app: "https://app.artst.io",
+  dashboard: "https://app.artst.io",
+  links: "https://app.artst.io/links",
+  settings: "https://app.artst.io/settings",
+  welcome: "https://app.artst.io/welcome",
   discord: "https://twitter.com/dubdotco", // placeholder for now
 };
 
 export const DUB_HEADERS = {
   headers: {
-    "x-powered-by": "Dub.co - Link management for modern marketing teams",
+    "x-powered-by": "artst.io - Link management for modern marketing teams",
   },
 };
 
@@ -125,7 +125,7 @@ export const DUB_DOMAINS = [
     archived: false,
     target: `https://${process.env.NEXT_PUBLIC_APP_DOMAIN}`,
     type: "redirect",
-    placeholder: "https://dub.co/help/article/what-is-dub",
+    placeholder: "https://artst.io/help/article/what-is-dub",
     clicks: 0,
     allowedHostnames: [],
   },
@@ -136,7 +136,7 @@ export const DUB_DOMAINS = [
           verified: true,
           primary: false,
           archived: false,
-          target: "https://dub.co/tools/chatgpt-link-shortener",
+          target: "https://artst.io/tools/chatgpt-link-shortener",
           type: "redirect",
           placeholder: "https://chat.openai.com/g/g-UGjKKONEe-domainsgpt",
           clicks: 0,
@@ -147,7 +147,7 @@ export const DUB_DOMAINS = [
           verified: true,
           primary: false,
           archived: false,
-          target: "https://dub.co/tools/amazon-link-shortener",
+          target: "https://artst.io/tools/amazon-link-shortener",
           type: "redirect",
           placeholder: "https://www.amazon.com/dp/B0BW4SWNC8",
           clicks: 0,
@@ -158,7 +158,7 @@ export const DUB_DOMAINS = [
           verified: true,
           primary: false,
           archived: false,
-          target: "https://dub.co/tools/spotify-link-shortener",
+          target: "https://artst.io/tools/spotify-link-shortener",
           type: "redirect",
           placeholder: "https://open.spotify.com/album/1SCyi9a5pOasikidToUY5y",
           clicks: 0,

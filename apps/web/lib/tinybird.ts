@@ -12,7 +12,7 @@ import { detectBot } from "./middleware/utils";
 
 /**
  * Recording clicks with geo, ua, referer and timestamp data
- * If key is not specified, record click as the root click ("_root", e.g. dub.sh, vercel.fyi)
+ * If key is not specified, record click as the root click ("_root", e.g. artst.io, vercel.fyi)
  **/
 export async function recordClick({
   req,

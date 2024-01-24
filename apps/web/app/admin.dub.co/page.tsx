@@ -34,7 +34,7 @@ export default function AdminPage() {
       <div className="flex flex-col space-y-4 px-5 py-10">
         <h2 className="text-xl font-semibold">Delete Anonymous Links</h2>
         <p className="text-sm text-gray-500">
-          Delete anonymous dub.sh links and blacklists the domain.
+          Delete anonymous artst.io links and blacklists the domain.
         </p>
         <DeleteLink />
       </div>

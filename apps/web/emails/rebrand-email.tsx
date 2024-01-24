@@ -26,7 +26,7 @@ export default function RebrandEmail({
     <Html>
       <Head />
       <Preview>
-        Today, we're thrilled to announce our rebrand. Dub.sh is now Dub.co.
+        Today, we're thrilled to announce our rebrand. artst.io is now artst.io.
       </Preview>
       <Tailwind>
         <Body className="mx-auto my-auto bg-white font-sans">
@@ -59,7 +59,7 @@ export default function RebrandEmail({
             <Text className="text-sm leading-6 text-black">
               You can learn more about the rebrand and what's changing{" "}
               <Link
-                href="https://dub.co/blog/rebrand"
+                href="https://artst.io/blog/rebrand"
                 className="font-medium text-blue-600 no-underline"
               >
                 in this blog post
@@ -81,7 +81,7 @@ export default function RebrandEmail({
             <Text className="ml-1 text-sm leading-6 text-black">
               ◆{" "}
               <Link
-                href="https://dub.co/blog/migration-assistants"
+                href="https://artst.io/blog/migration-assistants"
                 className="font-bold text-blue-600 no-underline"
               >
                 Migration Assistants
@@ -91,7 +91,7 @@ export default function RebrandEmail({
             <Text className="ml-1 text-sm leading-6 text-black">
               ◆{" "}
               <Link
-                href="https://dub.co/help"
+                href="https://artst.io/help"
                 className="font-bold text-blue-600 no-underline"
               >
                 Dub Help Center
@@ -123,7 +123,7 @@ export default function RebrandEmail({
             <Text className="text-sm leading-6 text-black">
               Check out our{" "}
               <Link
-                href="https://dub.co/changelog"
+                href="https://artst.io/changelog"
                 className="font-medium text-blue-600 no-underline"
               >
                 changelog

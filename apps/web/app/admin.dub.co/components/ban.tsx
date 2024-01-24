@@ -136,7 +136,7 @@ const Form = () => {
   return (
     <div className="relative flex w-full rounded-md shadow-sm">
       <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-50 px-5 text-gray-500 sm:text-sm">
-        dub.sh
+        artst.io
       </span>
       <input
         name="key"
@@ -146,7 +146,7 @@ const Form = () => {
         disabled={pending}
         autoComplete="off"
         onPaste={(e) => {
-          // replace http://dub.sh/ or https://dub.sh/ with nothing
+          // replace http://artst.io/ or https://artst.io/ with nothing
           const pastedText = e.clipboardData
             .getData("text")
             .replace(/https?:\/\/dub\.sh\//, "");

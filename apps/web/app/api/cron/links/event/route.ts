@@ -37,8 +37,8 @@ export async function POST(req: Request) {
     return new Response("Link not found", { status: 200 });
   }
 
-  // if the link is a dub.sh link, do some checks
-  if (link.domain === "dub.sh") {
+  // if the link is a artst.io link, do some checks
+  if (link.domain === "artst.io") {
     const invalidFavicon = await fetch(
       `${GOOGLE_FAVICON_URL}${getApexDomain(link.url)}`,
     ).then((res) => !res.ok);

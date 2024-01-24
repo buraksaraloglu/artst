@@ -130,7 +130,7 @@ export async function getUserByKey(data: FormData) {
     where: {
       links: {
         some: {
-          domain: "dub.sh",
+          domain: "artst.io",
           key,
         },
       },
@@ -139,7 +139,7 @@ export async function getUserByKey(data: FormData) {
       email: true,
       links: {
         where: {
-          domain: "dub.sh",
+          domain: "artst.io",
         },
         select: {
           key: true,
@@ -323,7 +323,7 @@ export async function getLinkByKey(data: FormData) {
   const link = await prisma.link.findUnique({
     where: {
       domain_key: {
-        domain: "dub.sh",
+        domain: "artst.io",
         key,
       },
     },

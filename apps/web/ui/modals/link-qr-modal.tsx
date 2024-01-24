@@ -86,7 +86,7 @@ export function QRCodePicker({
     if (logo && plan !== "free") return logo;
     return typeof window !== "undefined" && window.location.origin
       ? new URL("/_static/logo.svg", window.location.origin).href
-      : "https://dub.co/_static/logo.svg";
+      : "https://artst.io/_static/logo.svg";
   }, [logo, plan]);
 
   function download(url: string, extension: string) {
@@ -390,7 +390,7 @@ function QrDropdown({ download, qrData, showLogo, logo }) {
                   ...(showLogo && {
                     imageSettings: {
                       ...qrData.imageSettings,
-                      src: logo || "https://dub.co/_static/logo.svg",
+                      src: logo || "https://artst.io/_static/logo.svg",
                     },
                   }),
                 }),

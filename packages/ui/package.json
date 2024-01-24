@@ -1,6 +1,6 @@
 {
   "name": "@artst/ui",
-  "description": "UI components for Dub.co",
+  "description": "UI components for artst.io",
   "version": "0.0.43",
   "sideEffects": false,
   "main": "./dist/index.js",
@@ -53,7 +53,7 @@
     "vaul": "^0.8.0"
   },
   "author": "Steven Tey <stevensteel97@gmail.com>",
-  "homepage": "https://dub.co",
+  "homepage": "https://artst.io",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/steven-tey/dub.git"
@@ -63,7 +63,7 @@
   },
   "keywords": [
     "dub",
-    "dub.co",
+    "artst.io",
     "ui"
   ],
   "publishConfig": {

@@ -44,9 +44,9 @@ export default function Interim() {
           className="text-gray-500 underline transition-colors hover:text-gray-700"
           target="_blank"
           rel="noreferrer"
-          href="https://dub.sh"
+          href="https://artst.io"
         >
-          dub.sh
+          artst.io
         </a>{" "}
         domain to create short links.
       </motion.p>

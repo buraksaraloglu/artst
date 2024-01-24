@@ -42,14 +42,9 @@ export default async function middleware(req: NextRequest, ev: NextFetchEvent) {
     return ApiMiddleware(req);
   }
 
-  // for public stats pages (e.g. dub.co/stats/github)
+  // for public stats pages (e.g. artst.io/stats/github)
   if (key === "stats") {
     return NextResponse.rewrite(new URL(`/${domain}${path}`, req.url));
-  }
-
-  // default redirects for dub.sh
-  if (domain === "dub.sh" && DEFAULT_REDIRECTS[key]) {
-    return NextResponse.redirect(DEFAULT_REDIRECTS[key]);
   }
 
   // for Admin
@@ -57,7 +52,7 @@ export default async function middleware(req: NextRequest, ev: NextFetchEvent) {
     return AdminMiddleware(req);
   }
 
-  // for root pages (e.g. dub.sh, chatg.pt, etc.)
+  // for root pages (e.g. artst.io, chatg.pt, etc.)
   if (key.length === 0) {
     return RootMiddleware(req, ev);
   }

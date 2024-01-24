@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export default function ApiMiddleware(req: NextRequest) {
   const { path, fullPath, domain } = parse(req);
-  if (fullPath === "/" && domain === "api.dub.co") {
+  if (fullPath === "/" && domain === "api.artst.io") {
     return NextResponse.redirect(
       `${HOME_DOMAIN}/docs/api-reference/introduction`,
       {
