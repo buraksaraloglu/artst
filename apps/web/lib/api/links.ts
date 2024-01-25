@@ -293,14 +293,15 @@ export async function processLink({
     // checks for other Artst-owned domains (chatg.pt, spti.fi, etc.)
   } else if (isArtstDomain(domain)) {
     // coerce type with ! cause we already checked if it exists
-    const { allowedHostnames } = ARTST_DOMAINS.find((d) => d.slug === domain)!;
+    const { allowedHostnames } =
+      ARTST_DOMAINS.find((d) => d.slug === domain) || {};
     const urlDomain = getDomainWithoutWWW(url) || "";
-    if (!allowedHostnames.includes(urlDomain)) {
+    if (!allowedHostnames || !allowedHostnames.includes(urlDomain)) {
       return {
         link: payload,
-        error: `Invalid url. You can only use ${domain} short links for URLs starting with ${allowedHostnames
-          .map((d) => `\`${d}\``)
-          .join(", ")}.`,
+        error: `Invalid url. You can only use ${domain} short links for URLs starting with ${ARTST_DOMAINS.map(
+          (d) => `\`${d}\``,
+        ).join(", ")}.`,
         status: 422,
       };
     }
