@@ -7,24 +7,24 @@ import { updateUsage } from "./utils";
 // Runs once every day at 7AM PST (0 14 * * *)
 
 export async function GET(req: Request) {
-  const validSignature = await verifySignature(req);
-  if (!validSignature) {
-    return new Response("Unauthorized", { status: 401 });
-  }
+	const validSignature = await verifySignature(req);
+	if (!validSignature) {
+		return new Response("Unauthorized", { status: 401 });
+	}
 
-  const { skip } = getSearchParams(req.url);
+	const { skip } = getSearchParams(req.url);
 
-  try {
-    await updateUsage(skip ? parseInt(skip) : undefined);
+	try {
+		await updateUsage(skip ? parseInt(skip) : undefined);
 
-    return NextResponse.json({
-      response: "success",
-    });
-  } catch (error) {
-    await log({
-      message: "Usage cron failed. Error: " + error.message,
-      type: "errors",
-    });
-    return NextResponse.json({ error: error.message });
-  }
+		return NextResponse.json({
+			response: "success",
+		});
+	} catch (error) {
+		await log({
+			message: "Usage cron failed. Error: " + error.message,
+			type: "errors",
+		});
+		return NextResponse.json({ error: error.message });
+	}
 }

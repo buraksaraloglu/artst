@@ -19,7 +19,6 @@ module.exports = {
     "@vercel/style-guide/eslint/react",
     "@vercel/style-guide/eslint/next",
     "eslint-config-turbo",
-    "prettier"
   ].map(require.resolve),
   parserOptions: {
     project,
@@ -33,14 +32,12 @@ module.exports = {
       typescript: {
         project,
       },
-      node: {
-        extensions: [".mjs", ".js", ".jsx", ".ts", ".tsx"],
-      },
     },
   },
   ignorePatterns: ["node_modules/", "dist/"],
   // add rules configurations here
   rules: {
     "import/no-default-export": "off",
+    "unicorn/filename-case": "off",
   },
 };

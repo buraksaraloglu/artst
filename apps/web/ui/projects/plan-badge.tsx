@@ -2,19 +2,19 @@ import { PlanProps } from "@/lib/types";
 import { Badge } from "@artst/ui";
 
 export default function PlanBadge({ plan }: { plan: PlanProps }) {
-  return (
-    <Badge
-      variant={
-        plan === "enterprise"
-          ? "violet"
-          : plan === "business"
-          ? "sky"
-          : plan === "pro"
-          ? "blue"
-          : "black"
-      }
-    >
-      {plan}
-    </Badge>
-  );
+	return (
+		<Badge
+			variant={
+				plan === "enterprise"
+					? "violet"
+					: plan === "business"
+					? "sky"
+					: plan === "pro"
+					? "blue"
+					: "black"
+			}
+		>
+			{plan}
+		</Badge>
+	);
 }

@@ -2,7 +2,7 @@ import "dotenv-flow/config";
 import { redis } from "./utils";
 
 async function main() {
-  const script = `
+	const script = `
 local list_key = KEYS[1]
 local sorted_set_key = KEYS[2]
 
@@ -18,9 +18,9 @@ end
 
 return output`;
 
-  const response = await redis.eval(script, ["metatags, metatags-set"], []);
+	const response = await redis.eval(script, ["metatags, metatags-set"], []);
 
-  console.log(response);
+	console.log(response);
 }
 
 main();

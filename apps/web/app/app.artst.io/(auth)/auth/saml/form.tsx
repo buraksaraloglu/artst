@@ -6,16 +6,16 @@ import { useEffect } from "react";
 
 // To handle the IdP initiated login flow callback
 export default function SAMLForm() {
-  const searchParams = useSearchParams();
+	const searchParams = useSearchParams();
 
-  useEffect(() => {
-    const code = searchParams?.get("code");
+	useEffect(() => {
+		const code = searchParams?.get("code");
 
-    signIn("saml-idp", {
-      callbackUrl: "/",
-      code,
-    });
-  }, []);
+		signIn("saml-idp", {
+			callbackUrl: "/",
+			code,
+		});
+	}, []);
 
-  return null;
+	return null;
 }

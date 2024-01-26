@@ -6,15 +6,15 @@ import ProjectNotFound from "@/ui/projects/project-not-found";
 import { ReactNode } from "react";
 
 export default function ProjectAuth({ children }: { children: ReactNode }) {
-  const { loading, error } = useProject();
+	const { loading, error } = useProject();
 
-  if (loading) {
-    return <LayoutLoader />;
-  }
+	if (loading) {
+		return <LayoutLoader />;
+	}
 
-  if (error) {
-    return <ProjectNotFound />;
-  }
+	if (error) {
+		return <ProjectNotFound />;
+	}
 
-  return children;
+	return children;
 }

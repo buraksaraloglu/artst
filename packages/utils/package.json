@@ -36,7 +36,7 @@
     "nanoid": "^5.0.1",
     "tailwind-merge": "^1.13.2"
   },
-  "author": "Steven Tey <stevensteel97@gmail.com>",
+  "author": "Steven Tey <burak@okbrk.com>",
   "homepage": "https://artst.io",
   "repository": {
     "type": "git",

@@ -9,23 +9,20 @@ import { useSearchParams } from "next/navigation";
 import { ReactNode } from "react";
 
 export default function AnalyticsClient({ children }: { children: ReactNode }) {
-  const { exceededClicks, loading } = useProject();
-  if (exceededClicks) {
-    return <ProjectExceededClicks />;
-  }
-  const { allDomains, loading: loadingDomains } = useDomains();
-  const searchParams = useSearchParams();
-  const domain = searchParams?.get("domain");
+	const { exceededClicks, loading } = useProject();
+	if (exceededClicks) {
+		return <ProjectExceededClicks />;
+	}
+	const { allDomains, loading: loadingDomains } = useDomains();
+	const searchParams = useSearchParams();
+	const domain = searchParams?.get("domain");
 
-  if (loading || loadingDomains) {
-    return <LayoutLoader />;
-  }
-  if (
-    allDomains?.length === 0 ||
-    (domain && !allDomains?.find((d) => d.slug === domain))
-  ) {
-    return <LinkNotFound />;
-  }
+	if (loading || loadingDomains) {
+		return <LayoutLoader />;
+	}
+	if (allDomains?.length === 0 || (domain && !allDomains?.find((d) => d.slug === domain))) {
+		return <LinkNotFound />;
+	}
 
-  return children;
+	return children;
 }

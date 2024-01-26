@@ -34,7 +34,6 @@ export const GET = withAuth(async ({ headers, searchParams, project }) => {
 // POST /api/links – create a new link
 export const POST = withAuth(
 	async ({ req, headers, session, project }) => {
-		console.log("bismillah");
 		let body;
 		try {
 			body = await req.json();

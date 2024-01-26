@@ -42,8 +42,8 @@ import OGSection from "./og-section";
 import PasswordSection from "./password-section";
 import Preview from "./preview";
 import RewriteSection from "./rewrite-section";
-import UTMSection from "./utm-section";
 import TagsSection from "./tags-section";
+import UTMSection from "./utm-section";
 
 function AddEditLinkModal({
 	showAddEditLinkModal,

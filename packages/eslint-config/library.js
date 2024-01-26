@@ -15,7 +15,6 @@ module.exports = {
   extends: [
     "@vercel/style-guide/eslint/node",
     "@vercel/style-guide/eslint/typescript",
-    "prettier"
   ].map(require.resolve),
   parserOptions: {
     project,
@@ -28,9 +27,6 @@ module.exports = {
     "import/resolver": {
       typescript: {
         project,
-      },
-      node: {
-        extensions: [".mjs", ".js", ".jsx", ".ts", ".tsx"],
       },
     },
   },
