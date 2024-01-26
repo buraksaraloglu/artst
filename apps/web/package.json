@@ -88,7 +88,7 @@
     "vaul": "^0.6.8"
   },
   "devDependencies": {
-    "@artst/eslint-config": "*",
+    "@artst/eslint-config": "workspace:*",
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",
     "@types/dotenv-flow": "^3.3.2",
     "@types/he": "^1.2.3",
