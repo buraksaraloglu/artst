@@ -121,13 +121,12 @@ export const getStats = async ({
 		}
 	}
 
-	let url = new URL(`https://api.us-east.tinybird.co/v0/pipes/${endpoint}.json`);
-
+	let url = new URL(`https://api.eu-central-1.aws.tinybird.co/v0/pipes/${endpoint}.json`);
 	// TODO: remove this logic after #545 merges
-	url.searchParams.append(
-		"domain",
-		isArtstDomain(domain) && !key && projectId !== ARTST_PROJECT_ID ? "" : domain,
-	);
+	const shouldAppendDomaind = isArtstDomain(domain) && !key && projectId !== ARTST_PROJECT_ID;
+	if (!shouldAppendDomaind) {
+		url.searchParams.append("domain", domain);
+	}
 
 	if (key) {
 		url.searchParams.append("key", decodeURIComponent(key));
@@ -157,15 +156,16 @@ export const getStats = async ({
 		},
 	})
 		.then((res) => res.json())
-		.then(({ data }) => {
+		.then((res) => {
+			console.log("data", res);
 			if (endpoint === "clicks") {
 				try {
-					const clicks = data[0]["count()"];
+					const clicks = res.data[0]["count()"];
 					return clicks || "0";
 				} catch (e) {
 					console.log(e);
 				}
 			}
-			return data;
+			return res.data || [];
 		});
 };

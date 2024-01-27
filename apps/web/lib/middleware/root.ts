@@ -11,6 +11,7 @@ export default async function RootMiddleware(req: NextRequest, ev: NextFetchEven
 		return NextResponse.next();
 	}
 
+	console.log("should record click");
 	// record clicks on root page
 	ev.waitUntil(recordClick({ req, domain }));
 

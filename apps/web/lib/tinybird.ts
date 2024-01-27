@@ -35,7 +35,7 @@ export async function recordClick({
 	}
 
 	return await Promise.allSettled([
-		fetch("https://api.us-east.tinybird.co/v0/events?name=click_events&wait=true", {
+		fetch("https://api.eu-central-1.aws.tinybird.co/v0/events?name=click_events&wait=true", {
 			method: "POST",
 			headers: {
 				Authorization: `Bearer ${process.env.TINYBIRD_API_KEY}`,
@@ -91,14 +91,17 @@ export async function deleteClickData({ domain, key }: { domain: string; key: st
 		return null;
 	}
 	const deleteCondition = `domain='${domain}' AND key='${key}'`;
-	const response = await fetch("https://api.tinybird.co/v0/datasources/click_events/delete", {
-		method: "POST",
-		headers: {
-			Authorization: `Bearer ${process.env.TINYBIRD_API_KEY}`,
-			"Content-Type": "application/x-www-form-urlencoded",
+	const response = await fetch(
+		"https://api.eu-central-1.aws.tinybird.co/v0/datasources/click_events/delete",
+		{
+			method: "POST",
+			headers: {
+				Authorization: `Bearer ${process.env.TINYBIRD_API_KEY}`,
+				"Content-Type": "application/x-www-form-urlencoded",
+			},
+			body: `delete_condition=${encodeURIComponent(deleteCondition)}`,
 		},
-		body: `delete_condition=${encodeURIComponent(deleteCondition)}`,
-	}).then((res) => res.json());
+	).then((res) => res.json());
 	console.log({ response });
 	return response;
 }
