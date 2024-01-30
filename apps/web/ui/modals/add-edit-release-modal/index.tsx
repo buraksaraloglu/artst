@@ -425,7 +425,7 @@ function AddEditReleaseModal({
 									label="Spotify URL"
 									name="spotifyUrl"
 									id={`url-${randomIdx}`}
-									placeholder="spotify:album:6bdlDtybZYnm6hZtiEWeUs or https://open.spotify.com/album/6bdlDtybZYnm6hZtiEWeUs"
+									placeholder="spotify:album:***** or https://open.spotify.com/album/*****"
 									error={urlError}
 									autoComplete="off"
 									value={spotifyUrl || ""}

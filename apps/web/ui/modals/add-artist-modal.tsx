@@ -148,7 +148,7 @@ function AddArtistModalHelper({
 						setSaving(false);
 					});
 				}}
-				className="flex flex-col space-y-6 bg-gray-50 px-4 py-8 pb-16 sm:px-16 sm:pb-0"
+				className="flex flex-col space-y-6 bg-gray-50 px-4 py-8 pb-16 sm:px-16 sm:pb-8"
 			>
 				<div>
 					<label htmlFor="name" className="flex items-center space-x-2">
