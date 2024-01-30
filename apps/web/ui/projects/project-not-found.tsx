@@ -6,9 +6,11 @@ import Link from "next/link";
 export default function ProjectNotFound() {
 	return (
 		<MaxWidthWrapper>
-			<div className="my-10 grid items-center justify-center gap-2 rounded-md border border-gray-200 bg-white py-12">
-				<div className="rounded-full bg-gray-100 p-3">
-					<FileX2 className="h-6 w-6 text-gray-600" />
+			<div className="my-10 grid items-center justify-center rounded-md border border-gray-200 bg-white p-8 py-12">
+				<div className="flex">
+					<div className="rounded-full bg-gray-100 p-3">
+						<FileX2 className="h-6 w-6 text-gray-600" />
+					</div>
 				</div>
 				<h1 className="my-3 text-xl font-semibold text-gray-700">Project Not Found</h1>
 				<p className="z-10 max-w-sm text-center text-sm text-gray-600">
@@ -23,7 +25,7 @@ export default function ProjectNotFound() {
 				/>
 				<Link
 					href="/"
-					className="z-10 rounded-md border border-black bg-black px-10 py-2 text-sm font-medium text-white transition-all duration-75 hover:bg-white hover:text-black"
+					className="z-10 rounded-md border border-black bg-black px-10 py-2 text-center text-sm font-medium text-white transition-all duration-75 hover:bg-white hover:text-black"
 				>
 					Back to my projects
 				</Link>

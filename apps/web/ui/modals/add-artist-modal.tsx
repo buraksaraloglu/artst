@@ -70,12 +70,18 @@ function AddArtistModalHelper({
 
 	const searchParams = useSearchParams();
 	const { queryParams } = useRouterStuff();
-	const [useDefaultDomain, setUseDefaultDomain] = useState<boolean>(false);
+
+	const TEMP_USE_DEFAULT_DOMAIN = true; // TODO: Remove this
+
+	const [useDefaultDomain, setUseDefaultDomain] = useState<boolean>(
+		() => searchParams.has("useDefaultDomain") || TEMP_USE_DEFAULT_DOMAIN,
+	);
+
 	useEffect(() => {
 		if (searchParams.has("useDefaultDomain")) {
 			setUseDefaultDomain(true);
 		} else {
-			setUseDefaultDomain(false);
+			setUseDefaultDomain(false || TEMP_USE_DEFAULT_DOMAIN);
 		}
 	}, [searchParams]);
 
@@ -142,7 +148,7 @@ function AddArtistModalHelper({
 						setSaving(false);
 					});
 				}}
-				className="flex flex-col space-y-6 bg-gray-50 px-4 py-8 text-left sm:px-16"
+				className="flex flex-col space-y-6 bg-gray-50 px-4 py-8 pb-16 sm:px-16 sm:pb-0"
 			>
 				<div>
 					<label htmlFor="name" className="flex items-center space-x-2">
@@ -254,7 +260,6 @@ function AddArtistModalHelper({
 						</motion.div>
 					)}
 				</div>
-
 				<Button
 					disabled={slugError || domainError ? true : false}
 					loading={saving}

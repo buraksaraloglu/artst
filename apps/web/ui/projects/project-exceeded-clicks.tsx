@@ -11,9 +11,11 @@ export default function ProjectExceededClicks() {
 
 	return (
 		<MaxWidthWrapper>
-			<div className="my-10 flex flex-col items-center justify-center rounded-md border border-gray-200 bg-white py-12">
-				<div className="rounded-full bg-gray-100 p-3">
-					<Lock className="h-6 w-6 text-gray-600" />
+			<div className="my-10 items-center justify-center space-y-4 rounded-md border border-gray-200 bg-white py-12">
+				<div>
+					<div className="rounded-full bg-gray-100 p-3">
+						<Lock className="h-6 w-6 text-gray-600" />
+					</div>
 				</div>
 				<h1 className="my-3 text-xl font-semibold text-gray-700">Stats Locked</h1>
 				<p className="z-10 max-w-sm text-center text-sm text-gray-600">

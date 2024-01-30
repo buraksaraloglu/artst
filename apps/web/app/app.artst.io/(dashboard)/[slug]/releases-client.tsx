@@ -1,6 +1,7 @@
 "use client";
 
 import useProject from "@/lib/swr/use-project";
+import { PageHeader } from "@/ui/layout/page";
 import LinksContainer from "@/ui/links/links-container";
 import { useAddEditReleaseModal } from "@/ui/modals/add-edit-release-modal";
 import ReleasesContainer from "@/ui/releases/releases-container";
@@ -22,16 +23,16 @@ export default function ArtistReleasesClient() {
 	return (
 		<div>
 			<AddEditReleaseModal />
-			<div className="flex items-center border-b border-gray-200 bg-white py-4 md:py-8">
-				<MaxWidthWrapper>
-					<div className="flex items-center justify-between">
-						<h1 className="text-2xl text-gray-600">Releases</h1>
-						<div className="flex">
-							<AddEditReleaseButton />
-						</div>
+
+			<PageHeader
+				title="Releases"
+				actions={
+					<div className="flex">
+						<AddEditReleaseButton />
 					</div>
-				</MaxWidthWrapper>
-			</div>
+				}
+			/>
+			{/* <PageContent></PageContent> */}
 			<ReleasesContainer AddEditReleaseButton={AddEditReleaseButton} />
 		</div>
 	);
