@@ -18,8 +18,9 @@ export default function NavTabs() {
 	const { loading, error } = useProject();
 
 	const tabs = [
-		{ name: "Links", href: `/${slug}` },
+		{ name: "Releases", href: `/${slug}` },
 		{ name: "Analytics", href: `/${slug}/analytics` },
+		{ name: "Links", href: `/${slug}/links` },
 		{ name: "Domains", href: `/${slug}/domains` },
 		{ name: "Settings", href: `/${slug}/settings` },
 	];

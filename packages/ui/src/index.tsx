@@ -3,11 +3,15 @@ import "./styles.css";
 
 // components
 export * from "./accordion";
+export * from "./alert-dialog";
 export * from "./avatar";
 export * from "./badge";
 export * from "./button";
+export * from "./card";
 export * from "./checkbox";
+export * from "./error-message";
 export * from "./form";
+export * from "./input";
 export * from "./label";
 export * from "./modal";
 export * from "./popover";

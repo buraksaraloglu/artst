@@ -12,6 +12,7 @@ const config: Pick<Config, "presets"> = {
 				"../../packages/ui/src/**/*{.js,.ts,.jsx,.tsx}",
 			],
 			theme: {
+				...sharedConfig?.theme,
 				extend: {
 					...sharedConfig?.theme?.extend,
 					animation: {

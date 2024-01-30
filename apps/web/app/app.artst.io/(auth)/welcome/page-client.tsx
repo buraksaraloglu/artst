@@ -1,6 +1,6 @@
 "use client";
 
-import { useAddProjectModal } from "@/ui/modals/add-project-modal";
+import { useAddArtistModal } from "@/ui/modals/add-artist-modal";
 import { useUpgradePlanModal } from "@/ui/modals/upgrade-plan-modal";
 import Interim from "@/ui/welcome/interim";
 import Intro from "@/ui/welcome/intro";
@@ -12,7 +12,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 
 export default function WelcomePageClient() {
-	const { setShowAddProjectModal, AddProjectModal } = useAddProjectModal();
+	const { setShowAddArtistModal, AddArtistModal } = useAddArtistModal();
 	const { setShowUpgradePlanModal, UpgradePlanModal } = useUpgradePlanModal();
 
 	const router = useRouter();
@@ -25,10 +25,10 @@ export default function WelcomePageClient() {
 	useEffect(() => {
 		if (searchParams?.get("type") === "project") {
 			setTimeout(() => {
-				setShowAddProjectModal(true);
+				setShowAddArtistModal(true);
 			}, 200);
 		} else {
-			setShowAddProjectModal(false);
+			setShowAddArtistModal(false);
 		}
 		if (searchParams?.get("type") === "upgrade") {
 			setTimeout(() => {
@@ -42,7 +42,7 @@ export default function WelcomePageClient() {
 	return (
 		<div className="flex h-screen flex-col items-center">
 			<Background />
-			<AddProjectModal />
+			<AddArtistModal />
 			<UpgradePlanModal />
 			<AnimatePresence mode="wait">
 				{!searchParams?.get("type") && <Intro key="intro" />}

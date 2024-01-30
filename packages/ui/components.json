@@ -12,6 +12,6 @@
   },
   "aliases": {
     "components": "src",
-    "utils": "src/utils"
+    "utils": "@artst/utils"
   }
 }

@@ -203,6 +203,15 @@ export const DEFAULT_LINK_PROPS = {
 	proxy: false,
 };
 
+export const DEFAULT_RELEASE_PROPS = {
+	id: "",
+	title: "",
+	releaseDate: new Date(),
+	coverImage: "",
+	releaseAudio: "",
+	projectId: "",
+};
+
 export const ARTST_PROJECT_ID = "clrseyb8a00003jtgnzw87mad";
 export const LEGAL_PROJECT_ID = "clrflia0j0000vs7sqfhz9c7q";
 export const LEGAL_USER_ID = "clqei1lgc0000vsnzi01pbf47";

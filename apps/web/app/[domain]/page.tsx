@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: { domain: string } 
 	} Custom Domain`;
 	const description = `${params.domain.toUpperCase()} is a custom domain on ${
 		process.env.NEXT_PUBLIC_APP_NAME
-	} - an open-source link management tool for modern marketing teams to create, share, and track short links.`;
+	} - an artist management tool for modern marketing teams to create, share, and track short links.`;
 
 	return constructMetadata({
 		title,

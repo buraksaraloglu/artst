@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
 	return {
 		name: "artst.io App",
 		short_name: "artst.io",
-		description: "artst.io – the open-source link management infrastructure.",
+		description: "artst.io – the artist management infrastructure.",
 		start_url: "/",
 		display: "standalone",
 		background_color: "#ffffff",

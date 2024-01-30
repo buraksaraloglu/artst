@@ -1,6 +1,11 @@
 import { DirectorySyncProviders } from "@boxyhq/saml-jackson";
+import { type Release as ReleaseProps } from "@prisma/client";
+export { type Link as LinkProps, type Release as ReleaseProps } from "@prisma/client";
 
-export { type Link as LinkProps } from "@prisma/client";
+export interface ReleaseWithUserProps extends ReleaseProps {
+	user: UserProps;
+}
+
 export interface SimpleLinkProps {
 	domain: string;
 	key: string;

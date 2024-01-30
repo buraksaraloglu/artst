@@ -14,6 +14,7 @@ import { useDebounce } from "use-debounce";
 
 export default function DomainInput({
 	identifier = "domain", // "domain" is the default, but when it's used in AddEditDomainModal, it's "slug"
+	placeholderDomain = "artist-name.com",
 	data,
 	setData,
 	domainError,
@@ -78,7 +79,7 @@ export default function DomainInput({
 									domainError,
 							},
 						)}
-						placeholder="go.acme.com"
+						placeholder={placeholderDomain}
 						value={domain}
 						onChange={(e) => {
 							setDomainError(null);

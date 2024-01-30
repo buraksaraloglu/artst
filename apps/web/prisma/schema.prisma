@@ -25,6 +25,7 @@ model User {
   links     Link[]
   tokens    Token[]
   createdAt DateTime       @default(now())
+  Release   Release[]
 }
 
 model Account {
@@ -80,6 +81,7 @@ model Token {
   @@index([userId])
 }
 
+// Project represents an artist
 model Project {
   id   String  @id @default(cuid())
   name String
@@ -102,6 +104,7 @@ model Project {
   invites    ProjectInvite[]
   sentEmails SentEmail[]
   links      Link[]
+  releases   Release[]
   domains    Domain[]
   tags       Tag[]
 
@@ -179,14 +182,14 @@ model Link {
   id        String    @id @default(cuid())
   domain    String // domain of the link (e.g. artst.io) – also stored on Redis
   key       String // key of the link (e.g. /github) – also stored on Redis
-  url       String    @db.LongText // target url (e.g. https://github.com/artstio/artst) – also stored on Redis
+  url       String    @db.LongText // target url (e.g. https://artst.io) – also stored on Redis
   archived  Boolean   @default(false) // whether the link is archived or not
   expiresAt DateTime? // when the link expires – stored on Redis via ttl
   password  String? // password to access the link
 
   proxy       Boolean @default(false) // Proxy to use custom OG tags (stored on redis) – if false, will use OG tags from target url
-  title       String? // OG title for the link (e.g. artst.io - Open-Source Link Management Infrastructure)
-  description String? @db.VarChar(280) // OG description for the link (e.g. An open-source link management tool for modern marketing teams to create, share, and track short links.)
+  title       String? // OG title for the link (e.g. Artst.io - Artist Management Infrastructure)
+  description String? @db.VarChar(280) // OG description for the link (e.g. An artist management tool for modern marketing teams to create, share, and track short links.)
   image       String? @db.LongText // OG image for the link (e.g. https://artst.io/og-image.png)
 
   // UTM parameters
@@ -284,4 +287,156 @@ model jackson_ttl {
   expiresAt BigInt
 
   @@index([expiresAt], map: "_jackson_ttl_expires_at")
+}
+
+model Release {
+  id           String   @id @default(cuid())
+  title        String
+  releaseDate  DateTime
+  coverImage   String?  @db.LongText
+  releaseAudio String?  @db.LongText
+  spotifyUrl   String?  @db.LongText
+
+  // User who created the link
+  user   User?   @relation(fields: [userId], references: [id])
+  userId String?
+
+  // Project that the release belongs to
+  project   Project @relation(fields: [projectId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  projectId String
+
+  archived Boolean @default(false) // whether the link is archived or not
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // preSaveLinks  PreSaveLink[]
+  // releaseLinks  ReleaseLink[]
+  // analytics     Analytics[]
+
+  @@index(projectId)
+  @@index(userId)
+}
+
+model SpotifyTrack {
+  id          String   @id @default(cuid())
+  title       String
+  artist      String
+  album       String
+  albumArt    String
+  trackNumber Int
+  releaseDate DateTime
+  api_href    String
+  spotify_url String
+  previewUrl  String
+  durationMs  Int
+  explicit    Boolean
+  popularity  Int
+
+  isrc       String? // International Standard Recording Code
+  upc        String? // Universal Product Code
+  ean        String? // International Article Number
+  copyrights Copyright[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SpotifyAlbum {
+  id                   String   @id @default(cuid())
+  albumType            String // "album", "single", "compilation"
+  type                 String // response type
+  api_href             String
+  spotify_url          String
+  name                 String
+  releaseDate          DateTime
+  releaseDatePrecision String // "year", "month", "day"
+  label                String?
+  popularity           Int?     @default(0)
+  isPlayable           Boolean  @default(false)
+
+  isrc String? // International Standard Recording Code
+  upc  String? // Universal Product Code
+  ean  String? // International Article Number
+
+  artists    SpotifyArtist[]
+  copyrights Copyright[]
+}
+
+model SpotifyArtist {
+  id          String         @id @default(cuid())
+  name        String
+  api_href    String
+  spotify_url String
+  popularity  Int?           @default(0)
+  followers   Int?           @default(0)
+  images      SpotifyImage[]
+
+  createdAt              DateTime                 @default(now())
+  updatedAt              DateTime                 @updatedAt
+  spotifyArtistFollowers SpotifyArtistFollowers[]
+  spotifyAlbum           SpotifyAlbum[]
+}
+
+model SpotifyImage {
+  id     String @id @default(cuid())
+  url    String
+  width  Int
+  height Int
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  spotifyArtist   SpotifyArtist @relation(fields: [spotifyArtistId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  spotifyArtistId String
+
+  @@index(spotifyArtistId)
+}
+
+// Artist followers are stored separately for time series data
+model SpotifyArtistFollowers {
+  id        String @id @default(cuid())
+  followers Int?   @default(0)
+
+  artist   SpotifyArtist @relation(fields: [artistId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  artistId String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index(artistId)
+}
+
+model Copyright {
+  id        String   @id @default(cuid())
+  text      String
+  type      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  spotifyTrack   SpotifyTrack? @relation(fields: [spotifyTrackId], references: [id])
+  spotifyTrackId String?
+  spotifyAlbum   SpotifyAlbum? @relation(fields: [spotifyAlbumId], references: [id])
+  spotifyAlbumId String?
+
+  @@index(spotifyTrackId)
+  @@index(spotifyAlbumId)
+}
+
+model SpotifyMarket {
+  id   String @id @default(cuid())
+  name String
+  code String @unique
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SpotifyGenreSeeds {
+  id   String @id @default(cuid())
+  seed String @unique
+  name String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

@@ -1,4 +1,4 @@
-import CreateProjectButton from "@/ui/projects/create-project-button";
+import CreateArtistButton from "@/ui/projects/create-artist-button";
 import ProjectList from "@/ui/projects/project-list";
 import { MaxWidthWrapper } from "@artst/ui";
 
@@ -8,8 +8,8 @@ export default function App() {
 			<div className="flex h-36 items-center border-b border-gray-200 bg-white">
 				<MaxWidthWrapper>
 					<div className="flex items-center justify-between">
-						<h1 className="text-2xl text-gray-600">My Projects</h1>
-						<CreateProjectButton />
+						<h1 className="text-2xl text-gray-600">My Artists</h1>
+						<CreateArtistButton />
 					</div>
 				</MaxWidthWrapper>
 			</div>

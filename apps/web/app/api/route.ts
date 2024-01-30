@@ -9,7 +9,7 @@ export function GET(): NextResponse<OpenAPIV3.Document> {
 		info: {
 			title: "artst.io API",
 			description:
-				"Artst is an open-source link management tool for modern marketing teams to create, share, and track short links.",
+				"Artst is an artist management tool for modern marketing teams to create, share, and track short links.",
 			contact: {
 				email: "support@artst.io",
 				name: "artst.io Support",

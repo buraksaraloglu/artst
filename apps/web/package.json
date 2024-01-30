@@ -23,6 +23,7 @@
     "@sindresorhus/slugify": "^2.2.1",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^0.9.481",
+    "@spotify/web-api-ts-sdk": "^1.2.0",
     "@stripe/stripe-js": "^1.44.1",
     "@upstash/qstash": "^2.3.0",
     "@upstash/ratelimit": "^0.3.6",
@@ -88,7 +89,6 @@
     "vaul": "^0.6.8"
   },
   "devDependencies": {
-    "@artst/eslint-config": "workspace:*",
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",
     "@types/dotenv-flow": "^3.3.2",
     "@types/he": "^1.2.3",

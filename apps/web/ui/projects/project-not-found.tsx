@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function ProjectNotFound() {
 	return (
 		<MaxWidthWrapper>
-			<div className="my-10 flex flex-col items-center justify-center rounded-md border border-gray-200 bg-white py-12">
+			<div className="my-10 grid items-center justify-center gap-2 rounded-md border border-gray-200 bg-white py-12">
 				<div className="rounded-full bg-gray-100 p-3">
 					<FileX2 className="h-6 w-6 text-gray-600" />
 				</div>

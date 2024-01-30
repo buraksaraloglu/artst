@@ -5,7 +5,9 @@ import { SimpleLinkProps } from "@/lib/types";
 import { useAcceptInviteModal } from "@/ui/modals/accept-invite-modal";
 import { useAddEditDomainModal } from "@/ui/modals/add-edit-domain-modal";
 import { useAddEditLinkModal } from "@/ui/modals/add-edit-link-modal";
+import { useAddEditReleaseModal } from "@/ui/modals/add-edit-release-modal";
 import { useAddProjectModal } from "@/ui/modals/add-project-modal";
+import { useAddArtistModal } from "@/ui/modals/add-artist-modal";
 import { useCompleteSetupModal } from "@/ui/modals/complete-setup-modal";
 import { useImportBitlyModal } from "@/ui/modals/import-bitly-modal";
 import { useImportShortModal } from "@/ui/modals/import-short-modal";
@@ -25,6 +27,8 @@ export const ModalContext = createContext<{
 	setShowImportBitlyModal: Dispatch<SetStateAction<boolean>>;
 	setShowImportShortModal: Dispatch<SetStateAction<boolean>>;
 	setShowImportRebrandlyModal: Dispatch<SetStateAction<boolean>>;
+	setShowAddArtistModal: Dispatch<SetStateAction<boolean>>;
+	setShowAddEditReleaseModal: Dispatch<SetStateAction<boolean>>;
 }>({
 	setShowAddProjectModal: () => {},
 	setShowCompleteSetupModal: () => {},
@@ -34,14 +38,18 @@ export const ModalContext = createContext<{
 	setShowImportBitlyModal: () => {},
 	setShowImportShortModal: () => {},
 	setShowImportRebrandlyModal: () => {},
+	setShowAddArtistModal: () => {},
+	setShowAddEditReleaseModal: () => {},
 });
 
 export default function ModalProvider({ children }: { children: ReactNode }) {
 	const { AddProjectModal, setShowAddProjectModal } = useAddProjectModal();
+	const { AddArtistModal, setShowAddArtistModal } = useAddArtistModal();
 	const { CompleteSetupModal, setShowCompleteSetupModal } = useCompleteSetupModal();
 	const { setShowAddEditDomainModal, AddEditDomainModal } = useAddEditDomainModal();
 	const { AcceptInviteModal, setShowAcceptInviteModal } = useAcceptInviteModal();
 	const { setShowAddEditLinkModal, AddEditLinkModal } = useAddEditLinkModal();
+	const { setShowAddEditReleaseModal, AddEditReleaseModal } = useAddEditReleaseModal();
 	const { setShowUpgradePlanModal, UpgradePlanModal } = useUpgradePlanModal();
 	const { setShowImportBitlyModal, ImportBitlyModal } = useImportBitlyModal();
 	const { setShowImportShortModal, ImportShortModal } = useImportShortModal();
@@ -99,9 +107,13 @@ export default function ModalProvider({ children }: { children: ReactNode }) {
 				setShowImportBitlyModal,
 				setShowImportShortModal,
 				setShowImportRebrandlyModal,
+				setShowAddArtistModal,
+				setShowAddEditReleaseModal,
 			}}
 		>
 			<AddProjectModal />
+			<AddArtistModal />
+			<AddEditReleaseModal />
 			<AcceptInviteModal />
 			<CompleteSetupModal />
 			<AddEditDomainModal />

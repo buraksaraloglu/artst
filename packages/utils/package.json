@@ -36,14 +36,14 @@
     "nanoid": "^5.0.1",
     "tailwind-merge": "^1.13.2"
   },
-  "author": "Steven Tey <burak@okbrk.com>",
+  "author": "Burak Saraloglu <burak@okbrk.com>",
   "homepage": "https://artst.io",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/steven-tey/artst.git"
+    "url": "git+https://github.com/artst-io/artst.git"
   },
   "bugs": {
-    "url": "https://github.com/steven-tey/artst/issues"
+    "url": "https://github.com/artst-io/artst/issues"
   },
   "keywords": [
     "artst",

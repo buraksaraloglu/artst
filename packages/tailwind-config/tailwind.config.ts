@@ -2,60 +2,91 @@ import forms from "@tailwindcss/forms";
 import typography from "@tailwindcss/typography";
 import scrollbarHide from "tailwind-scrollbar-hide";
 import type { Config } from "tailwindcss";
+
 import radix from "tailwindcss-radix";
 
 const config: Config = {
-	content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+	darkMode: ["class"],
+	content: [
+		"./pages/**/*.{ts,tsx}",
+		"./components/**/*.{ts,tsx}",
+		"./app/**/*.{ts,tsx}",
+		"./src/**/*.{ts,tsx,mdx}",
+	],
 	future: {
 		hoverOnlyWhenSupported: true,
 	},
+	prefix: "",
 	theme: {
-		extend: {
+		container: {
+			center: true,
+			padding: "2rem",
 			screens: {
-				xs: "420px",
+				"2xl": "1400px",
 			},
-			typography: {
-				DEFAULT: {
-					css: {
-						"blockquote p:first-of-type::before": { content: "none" },
-						"blockquote p:first-of-type::after": { content: "none" },
-					},
+		},
+		extend: {
+			colors: {
+				border: "hsl(var(--border))",
+				input: "hsl(var(--input))",
+				ring: "hsl(var(--ring))",
+				background: "hsl(var(--background))",
+				foreground: "hsl(var(--foreground))",
+				primary: {
+					DEFAULT: "hsl(var(--primary))",
+					foreground: "hsl(var(--primary-foreground))",
+				},
+				secondary: {
+					DEFAULT: "hsl(var(--secondary))",
+					foreground: "hsl(var(--secondary-foreground))",
+				},
+				destructive: {
+					DEFAULT: "hsl(var(--destructive))",
+					foreground: "hsl(var(--destructive-foreground))",
+				},
+				muted: {
+					DEFAULT: "hsl(var(--muted))",
+					foreground: "hsl(var(--muted-foreground))",
+				},
+				accent: {
+					DEFAULT: "hsl(var(--accent))",
+					foreground: "hsl(var(--accent-foreground))",
+				},
+				popover: {
+					DEFAULT: "hsl(var(--popover))",
+					foreground: "hsl(var(--popover-foreground))",
+				},
+				card: {
+					DEFAULT: "hsl(var(--card))",
+					foreground: "hsl(var(--card-foreground))",
+				},
+				brown: {
+					50: "#fdf8f6",
+					100: "#f2e8e5",
+					200: "#eaddd7",
+					300: "#e0cec7",
+					400: "#d2bab0",
+					500: "#bfa094",
+					600: "#a18072",
+					700: "#977669",
+					800: "#846358",
+					900: "#43302b",
 				},
 			},
-			fontFamily: {
-				display: ["var(--font-satoshi)", "system-ui", "sans-serif"],
-				default: ["var(--font-inter)", "system-ui", "sans-serif"],
-			},
-			animation: {
-				// Modal
-				"scale-in": "scale-in 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
-				"fade-in": "fade-in 0.3s ease-out forwards",
-				// Input Select
-				"input-select-slide-up": "input-select-slide-up 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
-				"input-select-slide-down": "input-select-slide-down 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
-				// Tooltip
-				"slide-up-fade": "slide-up-fade 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
-				"slide-right-fade": "slide-right-fade 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
-				"slide-down-fade": "slide-down-fade 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
-				"slide-left-fade": "slide-left-fade 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
-				// Navigation menu
-				"enter-from-right": "enter-from-right 0.25s ease",
-				"enter-from-left": "enter-from-left 0.25s ease",
-				"exit-to-right": "exit-to-right 0.25s ease",
-				"exit-to-left": "exit-to-left 0.25s ease",
-				"scale-in-content": "scale-in-content 0.2s ease",
-				"scale-out-content": "scale-out-content 0.2s ease",
-				// Accordion
-				"accordion-down": "accordion-down 300ms cubic-bezier(0.87, 0, 0.13, 1)",
-				"accordion-up": "accordion-up 300ms cubic-bezier(0.87, 0, 0.13, 1)",
-				// Custom wiggle animation
-				wiggle: "wiggle 0.75s infinite",
-				// Custom spinner animation (for loading-spinner)
-				spinner: "spinner 1.2s linear infinite",
-				// Custom blink animation (for loading-dots)
-				blink: "blink 1.4s infinite both",
+			borderRadius: {
+				lg: "var(--radius)",
+				md: "calc(var(--radius) - 2px)",
+				sm: "calc(var(--radius) - 4px)",
 			},
 			keyframes: {
+				"accordion-down": {
+					from: { height: "0" },
+					to: { height: "var(--radix-accordion-content-height)" },
+				},
+				"accordion-up": {
+					from: { height: "var(--radix-accordion-content-height)" },
+					to: { height: "0" },
+				},
 				// Modal
 				"scale-in": {
 					"0%": { transform: "scale(0.95)" },
@@ -116,15 +147,7 @@ const config: Config = {
 					"0%": { transform: "rotateX(0deg) scale(1)", opacity: "1" },
 					"100%": { transform: "rotateX(-10deg) scale(0.95)", opacity: "0" },
 				},
-				// Accordion
-				"accordion-down": {
-					from: { height: "0" },
-					to: { height: "var(--radix-accordion-content-height)" },
-				},
-				"accordion-up": {
-					from: { height: "var(--radix-accordion-content-height)" },
-					to: { height: "0" },
-				},
+
 				// Custom wiggle animation
 				wiggle: {
 					"0%, 100%": {
@@ -159,23 +182,83 @@ const config: Config = {
 					},
 				},
 			},
-			colors: {
-				brown: {
-					50: "#fdf8f6",
-					100: "#f2e8e5",
-					200: "#eaddd7",
-					300: "#e0cec7",
-					400: "#d2bab0",
-					500: "#bfa094",
-					600: "#a18072",
-					700: "#977669",
-					800: "#846358",
-					900: "#43302b",
-				},
+			animation: {
+				"accordion-down": "accordion-down 0.2s ease-out",
+				"accordion-up": "accordion-up 0.2s ease-out",
+				// Modal
+				"scale-in": "scale-in 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
+				"fade-in": "fade-in 0.3s ease-out forwards",
+				// Input Select
+				"input-select-slide-up": "input-select-slide-up 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
+				"input-select-slide-down": "input-select-slide-down 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
+				// Tooltip
+				"slide-up-fade": "slide-up-fade 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+				"slide-right-fade": "slide-right-fade 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+				"slide-down-fade": "slide-down-fade 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+				"slide-left-fade": "slide-left-fade 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+				// Navigation menu
+				"enter-from-right": "enter-from-right 0.25s ease",
+				"enter-from-left": "enter-from-left 0.25s ease",
+				"exit-to-right": "exit-to-right 0.25s ease",
+				"exit-to-left": "exit-to-left 0.25s ease",
+				"scale-in-content": "scale-in-content 0.2s ease",
+				"scale-out-content": "scale-out-content 0.2s ease",
+				// Custom wiggle animation
+				wiggle: "wiggle 0.75s infinite",
+				// Custom spinner animation (for loading-spinner)
+				spinner: "spinner 1.2s linear infinite",
+				// Custom blink animation (for loading-dots)
+				blink: "blink 1.4s infinite both",
 			},
 		},
 	},
-	plugins: [forms, typography, scrollbarHide, radix],
+	plugins: [require("tailwindcss-animate"), forms, typography, scrollbarHide, radix],
 };
+// fontFamily: {
+// 	display: ["var(--font-satoshi)", "system-ui", "sans-serif"],
+// 	default: ["var(--font-inter)", "system-ui", "sans-serif"],
+// },
+//  {
+// 	content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+// 	future: {
+// 		hoverOnlyWhenSupported: true,
+// 	},
+// 	theme: {
+// 		extend: {
+// 			screens: {
+// 				xs: "420px",
+// 			},
+// 			typography: {
+// 				DEFAULT: {
+// 					css: {
+// 						"blockquote p:first-of-type::before": { content: "none" },
+// 						"blockquote p:first-of-type::after": { content: "none" },
+// 					},
+// 				},
+// 			},
+// 			animation: {
+// 				// Modal
+// 				"scale-in": "scale-in 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
+// 				"fade-in": "fade-in 0.3s ease-out forwards",
+
+// 			},
+// 			colors: {
+// 				brown: {
+// 					50: "#fdf8f6",
+// 					100: "#f2e8e5",
+// 					200: "#eaddd7",
+// 					300: "#e0cec7",
+// 					400: "#d2bab0",
+// 					500: "#bfa094",
+// 					600: "#a18072",
+// 					700: "#977669",
+// 					800: "#846358",
+// 					900: "#43302b",
+// 				},
+// 			},
+// 		},
+// 	},
+// 	plugins: [forms, typography, scrollbarHide, radix],
+// };
 
 export default config;
